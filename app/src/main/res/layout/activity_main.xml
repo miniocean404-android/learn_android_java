@@ -22,19 +22,86 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/tv_one"
+    
+    <Button
+        android:id="@+id/learn_button_event"
+        android:text="我是练习按钮"
+        android:background="@drawable/btn_select"
+        android:backgroundTint="@color/btn_color_selector"
+        android:textColor="@color/white"
         android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:textSize="16sp"
-        android:text="@string/tv_one"
-        android:textStyle="bold"
-        android:textColor="@color/colorPrimary"
-        android:background="@color/red"
-        android:gravity="center"
+        android:layout_height="100dp"
         >
 
+    </Button>
+
+    <TextView
+        android:id="@+id/learn_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:shadowColor="@color/red"
+        android:shadowDx="10.0"
+        android:shadowDy="1.0"
+        android:shadowRadius="3.0"
+        android:text="@string/learn_text_view"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp"
+        android:textStyle="italic"
+        android:maxLines="1"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:clickable="true">
     </TextView>
+
+
+    <TextView
+        android:id="@+id/learn_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:shadowColor="@color/red"
+        android:shadowDx="10.0"
+        android:shadowDy="1.0"
+        android:shadowRadius="3.0"
+        android:text="@string/learn_text_view"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp"
+        android:textStyle="italic"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:clickable="true">
+        <requestFocus/>
+    </TextView>
+
+    <com.example.learnandroidjava.MyTextView
+        android:id="@+id/learn_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:shadowColor="@color/red"
+        android:shadowDx="10.0"
+        android:shadowDy="1.0"
+        android:shadowRadius="3.0"
+        android:text="@string/learn_text_view"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp"
+        android:textStyle="italic"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:clickable="true">
+
+    </com.example.learnandroidjava.MyTextView>
 
 </LinearLayout>
