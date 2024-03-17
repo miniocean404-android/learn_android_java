@@ -9,8 +9,10 @@
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_200</item>
         <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+
+
+        <!-- 状态栏 -->
+        <!-- 设置状态栏文字色, true为深色, false为白色 -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 </resources>

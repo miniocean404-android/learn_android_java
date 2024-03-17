@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--    根据父容器定位-->
+    <RelativeLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentEnd="true"
+        android:background="#ff0000" />
+
+    <RelativeLayout
+        android:id="@+id/center"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:background="#ff0000" />
+
+<!--    相对兄弟组件 -->
+    <RelativeLayout
+        android:layout_toStartOf="@id/center"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#00ff00" />
+
+    <RelativeLayout
+        android:layout_above="@id/center"
+        android:layout_marginStart="20dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#00ff00" />
+</RelativeLayout>

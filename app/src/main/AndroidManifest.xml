@@ -26,6 +26,14 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".NoticeActivity" />
+        <activity android:name=".activity.BaseActivity" />
+        <activity android:name=".activity.NoticeActivity" />
+        <activity android:name=".activity.RelativeLayoutActivity" />
+        <activity android:name=".activity.FrameLayoutActivity" />
+        <activity android:name=".activity.TableLayoutActivity" />
+        <activity android:name=".activity.GridLayoutActivity" />
+        <activity android:name=".activity.ListViewActivity" />
+        <activity android:name=".activity.ConstraintLayoutActivity" />
+        <activity android:name="com.example.learnandroidjava.activity.RecyclerViewActivity" />
     </application>
 </manifest>

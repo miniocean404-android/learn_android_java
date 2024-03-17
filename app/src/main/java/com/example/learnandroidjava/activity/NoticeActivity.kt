@@ -1,4 +1,4 @@
-package com.example.learnandroidjava
+package com.example.learnandroidjava.activity
 
 import android.annotation.SuppressLint
 import android.os.Bundle

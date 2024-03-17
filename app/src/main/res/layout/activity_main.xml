@@ -18,227 +18,59 @@
 
 <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    android:columnCount="4"
+    tools:ignore="RtlHardcoded">
 
     <Button
-        android:id="@+id/show_pop_window_btn"
-        android:text="显示 POP Window"
+        android:text="基础"
+        android:id="@+id/go_base_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/show_dialog_btn"
-        android:text="显示弹窗"
+        android:text="相对布局"
+        android:id="@+id/go_relative_layout_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        app:title="标题"
-        app:titleTextColor="#000000"
-        app:titleMarginStart="10dp"
-        app:subtitle="子标题"
-        app:subtitleTextColor="#ff0000"
-        app:logo="@drawable/ic_launcher_foreground"
-        android:background="#ffff00"
-        app:navigationIcon="@drawable/baseline_arrow_back_ios_24"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize">
-    </androidx.appcompat.widget.Toolbar>
-
-    <androidx.appcompat.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:navigationIcon="@drawable/baseline_arrow_back_ios_24"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="标题"
-            >
-        </TextView>
-    </androidx.appcompat.widget.Toolbar>
-
+    <Button
+        android:text="相对布局"
+        android:id="@+id/go_frame_layout_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/send_notice_btn"
-        android:text="发送通知"
+        android:text="表格布局"
+        android:id="@+id/go_table_layout_btn"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        >
-    </Button>
-
+        android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/hide_notice_btn"
-        android:text="隐藏通知"
+        android:id="@+id/go_grid_layout_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        >
-    </Button>
-
-    <ProgressBar
-        android:id="@+id/learn_progress_bar_process"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:max="100"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </ProgressBar>
-
-    <ProgressBar
-        style="?android:attr/progressBarStyleHorizontal"
-        android:indeterminate="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </ProgressBar>
+        android:text="Grid 布局" />
 
     <Button
-        android:id="@+id/get_process_bar_process_btn"
-        android:text="增加进度条进度"
+        android:text="约束布局"
+        android:id="@+id/go_constraint_layout_btn"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        >
-    </Button>
-
-    <ProgressBar
-        android:id="@+id/learn_progress_bar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-    </ProgressBar>
-    <Button
-        android:id="@+id/get_process_bar_btn"
-        android:text="显示隐藏进度条"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        >
-    </Button>
-
-    
-    <ImageView
-        android:src="@drawable/image_view_100_100"
-        android:scaleType="centerInside"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        >
-    </ImageView>
-
-    <ImageView
-        android:src="@drawable/image_view_200_100"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:maxWidth="200dp"
-        android:adjustViewBounds="true"
-       >
-    </ImageView>
-
-    <EditText
-        android:id="@+id/learn_edit_text"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:drawableStart="@drawable/ic_launcher_foreground"
-        android:drawablePadding="20dp"
-        android:padding="20dp"
-        android:background="@color/white"
-        android:hint="请输入密码"
-        android:inputType="textPassword"
-        android:textColorHint="#ff0000"
-        android:autofillHints="">
-    </EditText>
+        android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/get_input_text"
-        android:text="获取输入框内容"
+        android:text="ListView"
+        android:id="@+id/go_list_view_btn"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        >
-    </Button>
+        android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/learn_button_event"
-        android:text="我是练习按钮"
-        android:background="@drawable/btn_select"
-        android:backgroundTint="@color/btn_color_selector"
-        android:textColor="@color/white"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
-        >
-    </Button>
+        android:text="RecyclerView"
+        android:id="@+id/go_recycler_view_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
-    <TextView
-        android:id="@+id/learn_text_view1"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@color/white"
-        android:gravity="center"
-        android:shadowColor="@color/red"
-        android:shadowDx="10.0"
-        android:shadowDy="1.0"
-        android:shadowRadius="3.0"
-        android:text="@string/learn_text_view"
-        android:textColor="@color/colorPrimary"
-        android:textSize="30sp"
-        android:textStyle="italic"
-        android:maxLines="1"
-        android:ellipsize="marquee"
-        android:marqueeRepeatLimit="marquee_forever"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:clickable="true"
-        tools:ignore="DuplicateIds">
-    </TextView>
-
-
-    <TextView
-        android:id="@+id/learn_text_view2"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@color/white"
-        android:gravity="center"
-        android:shadowColor="@color/red"
-        android:shadowDx="10.0"
-        android:shadowDy="1.0"
-        android:shadowRadius="3.0"
-        android:text="@string/learn_text_view"
-        android:textColor="@color/colorPrimary"
-        android:textSize="30sp"
-        android:textStyle="italic"
-        android:singleLine="true"
-        android:ellipsize="marquee"
-        android:marqueeRepeatLimit="marquee_forever"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:clickable="true">
-        <requestFocus/>
-    </TextView>
-
-    <com.example.learnandroidjava.MyTextView
-        android:id="@+id/learn_text_view3"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@color/white"
-        android:gravity="center"
-        android:shadowColor="@color/red"
-        android:shadowDx="10.0"
-        android:shadowDy="1.0"
-        android:shadowRadius="3.0"
-        android:text="@string/learn_text_view"
-        android:textColor="@color/colorPrimary"
-        android:textSize="30sp"
-        android:textStyle="italic"
-        android:singleLine="true"
-        android:ellipsize="marquee"
-        android:marqueeRepeatLimit="marquee_forever"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:clickable="true">
-
-    </com.example.learnandroidjava.MyTextView>
-
-</LinearLayout>
+</GridLayout>

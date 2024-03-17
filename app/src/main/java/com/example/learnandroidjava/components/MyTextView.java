@@ -1,4 +1,4 @@
-package com.example.learnandroidjava;
+package com.example.learnandroidjava.components;
 
 import android.content.Context;
 import android.util.AttributeSet;
