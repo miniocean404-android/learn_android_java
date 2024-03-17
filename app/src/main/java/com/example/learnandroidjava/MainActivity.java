@@ -19,6 +19,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NotificationCompat;
 
 import com.example.learnandroidjava.utils.DynamicNotice;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         show_hidden_process_bar();
         get_process_bar_process();
         send_notice();
+        toolbar_click();
     }
 
     private void change_text_view(String text) {
@@ -172,6 +174,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 manager.cancel(1);
                 Log.e(Tag, "取消通知");
+            }
+        });
+    }
+
+    private void toolbar_click() {
+        Toolbar toolbar = findViewById(R.id.toolbar);
+
+        toolbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e(Tag, "点击了工具栏");
             }
         });
     }
