@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LearnAndroidJava</string>
+    <string name="app_name">学习安卓开发</string>
 
     <!-- 在 TextView text 中引用的字符串 -->
     <string name="learn_text_view">小海洋 小海洋  小海洋  小海洋  小海洋  小海洋  小海洋  小海洋  小海洋  小海洋  小海洋  小海洋  小海洋  小海洋  小海洋  小海洋  小海洋  小海洋</string>

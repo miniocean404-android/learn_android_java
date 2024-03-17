@@ -1,12 +1,12 @@
 package com.example.learnandroidjava;
 
+
 import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Build;
@@ -18,9 +18,11 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
+
+import com.example.learnandroidjava.utils.DynamicNotice;
+
 
 public class MainActivity extends AppCompatActivity {
     private final String Tag = "mini_ocean";
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         get_input_content();
         show_hidden_process_bar();
         get_process_bar_process();
+        send_notice();
     }
 
     private void change_text_view(String text) {
@@ -123,6 +126,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void send_notice() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            DynamicNotice.requestNotificationPermission(this);
+        }
+
         // 获取句柄
         manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
@@ -146,6 +153,7 @@ public class MainActivity extends AppCompatActivity {
                 .setColor(Color.parseColor("#FF0000"))
                 .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.drawable.image_view_100_100))
                 .setContentIntent(pendingIntent)
+                .setAutoCancel(true)
                 .build();
 
 
@@ -163,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 manager.cancel(1);
-                Log.e(Tag, "发送通知");
+                Log.e(Tag, "取消通知");
             }
         });
     }
