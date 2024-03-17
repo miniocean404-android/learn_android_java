@@ -2,10 +2,12 @@ package com.example.learnandroidjava;
 
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -14,7 +16,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.PopupWindow;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -41,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
         get_process_bar_process();
         send_notice();
         toolbar_click();
+
+        show_dialog();
+        show_pop_window();
     }
 
     private void change_text_view(String text) {
@@ -185,6 +192,75 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.e(Tag, "点击了工具栏");
+            }
+        });
+    }
+
+    @SuppressLint("InflateParams")
+    private void show_dialog(){
+        Button show_dialog_btn = findViewById(R.id.show_dialog_btn);
+
+        show_dialog_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                View dialog_view = getLayoutInflater().inflate(R.layout.dialog_view, null);
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+
+                builder.setIcon(R.mipmap.ic_launcher);
+                builder.setTitle("这是一个对话框");
+                builder.setMessage("这是对话框的内容");
+
+                builder.setView(dialog_view);
+                builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Log.e(Tag, "点击了确定按钮");
+                    }
+                });
+                builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Log.e(Tag, "点击了取消按钮");
+                    }
+                });
+                builder.setNeutralButton("忽略", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Log.e(Tag, "点击了忽略按钮");
+                    }
+                });
+
+                builder.create();
+                builder.show();
+            }
+        });
+    }
+
+    @SuppressLint("InflateParams")
+    private void show_pop_window(){
+        Button show_pop_window_btn = findViewById(R.id.show_pop_window_btn);
+        show_pop_window_btn.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("UseCompatLoadingForDrawables")
+            @Override
+            public void onClick(View v) {
+                View pop_view = getLayoutInflater().inflate(R.layout.dialog_view, null);
+                Button sure = pop_view.findViewById(R.id.pop_window_sure);
+
+                PopupWindow popupWindow = new PopupWindow(pop_view, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT,true);
+                popupWindow.setBackgroundDrawable(getResources().getDrawable(R.drawable.ic_launcher_background, null));
+                popupWindow.showAsDropDown(v,v.getWidth(),-v.getHeight());
+                // 是否可点击 popupWindow 里面
+                popupWindow.setTouchable(true);
+                // 是否可点击 popupWindow 外面
+                popupWindow.setOutsideTouchable(true);
+
+                sure.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Log.e(Tag, "点击了确定按钮");
+                        popupWindow.dismiss();
+                    }
+                });
             }
         });
     }
