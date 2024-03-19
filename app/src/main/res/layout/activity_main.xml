@@ -96,4 +96,10 @@
         android:id="@+id/go_view_page_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
+    <Button
+        android:text="ok_http"
+        android:id="@+id/go_ok_http_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </GridLayout>

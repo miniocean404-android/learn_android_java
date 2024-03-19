@@ -48,4 +48,7 @@ dependencies {
 
     // 添加 recycler_view 依赖
     implementation(libs.androidx.recyclerview)
+
+    // okhttp
+    implementation(libs.com.squareup.okhttp3.okhttp)
 }

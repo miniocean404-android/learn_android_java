@@ -17,6 +17,7 @@ import com.example.learnandroidjava.activity.FrameByFrameActivity;
 import com.example.learnandroidjava.activity.FrameLayoutActivity;
 import com.example.learnandroidjava.activity.GridLayoutActivity;
 import com.example.learnandroidjava.activity.ListViewActivity;
+import com.example.learnandroidjava.activity.OkHttpActivity;
 import com.example.learnandroidjava.activity.PropAnimActivity;
 import com.example.learnandroidjava.activity.RecyclerViewActivity;
 import com.example.learnandroidjava.activity.RelativeLayoutActivity;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         jump(this,R.id.go_tween_btn, TweenActivity.class);
         jump(this,R.id.go_prop_btn, PropAnimActivity.class);
         jump(this,R.id.go_view_page_btn, ViewPageActivity.class);
+        jump(this,R.id.go_ok_http_btn, OkHttpActivity.class);
     }
 
     private void jump(Activity activity,@IdRes int id,Class<?> cls){
