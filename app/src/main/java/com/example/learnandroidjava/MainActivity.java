@@ -22,6 +22,7 @@ import com.example.learnandroidjava.activity.RecyclerViewActivity;
 import com.example.learnandroidjava.activity.RelativeLayoutActivity;
 import com.example.learnandroidjava.activity.TableLayoutActivity;
 import com.example.learnandroidjava.activity.TweenActivity;
+import com.example.learnandroidjava.activity.ViewPageActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         jump(this,R.id.go_recycler_view_btn, RecyclerViewActivity.class);
         jump(this,R.id.go_frame_by_frame_btn, FrameByFrameActivity.class);
         jump(this,R.id.go_tween_btn, TweenActivity.class);
-        jump(this,R.id.go_prop_btn, PropAnimActivity.class);
+        jump(this,R.id.go_view_page_btn, ViewPageActivity.class);
     }
 
     private void jump(Activity activity,@IdRes int id,Class<?> cls){

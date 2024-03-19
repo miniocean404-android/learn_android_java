@@ -38,6 +38,7 @@
         <activity android:name=".activity.FrameByFrameActivity" />
         <activity android:name=".activity.TweenActivity" />
         <activity android:name="com.example.learnandroidjava.activity.PropAnimActivity" />
+        <activity android:name="com.example.learnandroidjava.activity.ViewPageActivity" />
     </application>
 
 </manifest>
