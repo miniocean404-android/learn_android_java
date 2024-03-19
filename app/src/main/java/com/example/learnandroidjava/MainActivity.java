@@ -17,9 +17,11 @@ import com.example.learnandroidjava.activity.FrameByFrameActivity;
 import com.example.learnandroidjava.activity.FrameLayoutActivity;
 import com.example.learnandroidjava.activity.GridLayoutActivity;
 import com.example.learnandroidjava.activity.ListViewActivity;
+import com.example.learnandroidjava.activity.PropAnimActivity;
 import com.example.learnandroidjava.activity.RecyclerViewActivity;
 import com.example.learnandroidjava.activity.RelativeLayoutActivity;
 import com.example.learnandroidjava.activity.TableLayoutActivity;
+import com.example.learnandroidjava.activity.TweenActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -38,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
         jump(this,R.id.go_list_view_btn, ListViewActivity.class);
         jump(this,R.id.go_recycler_view_btn, RecyclerViewActivity.class);
         jump(this,R.id.go_frame_by_frame_btn, FrameByFrameActivity.class);
+        jump(this,R.id.go_tween_btn, TweenActivity.class);
+        jump(this,R.id.go_prop_btn, PropAnimActivity.class);
     }
 
     private void jump(Activity activity,@IdRes int id,Class<?> cls){

@@ -79,4 +79,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
+    <Button
+        android:text="补间动画 tween"
+        android:id="@+id/go_tween_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:text="属性动画"
+        android:id="@+id/go_prop_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
 </GridLayout>
