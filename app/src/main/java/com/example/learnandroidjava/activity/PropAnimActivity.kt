@@ -38,25 +38,21 @@ class PropAnimActivity : AppCompatActivity() {
 
             addListener(object : Animator.AnimatorListener {
                 override fun onAnimationStart(p0: Animator) {
-                    TODO("Not yet implemented")
                 }
 
                 override fun onAnimationEnd(p0: Animator) {
-                    TODO("Not yet implemented")
                 }
 
                 override fun onAnimationCancel(p0: Animator) {
-                    TODO("Not yet implemented")
                 }
 
                 override fun onAnimationRepeat(p0: Animator) {
-                    TODO("Not yet implemented")
                 }
             })
 
             addListener(object : AnimatorListenerAdapter() {
                 override fun onAnimationEnd(animation: Animator) {
-                    TODO("Not yet implemented")
+                    super.onAnimationEnd(animation)
                 }
             })
         }

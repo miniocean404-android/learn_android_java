@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         jump(this,R.id.go_recycler_view_btn, RecyclerViewActivity.class);
         jump(this,R.id.go_frame_by_frame_btn, FrameByFrameActivity.class);
         jump(this,R.id.go_tween_btn, TweenActivity.class);
+        jump(this,R.id.go_prop_btn, PropAnimActivity.class);
         jump(this,R.id.go_view_page_btn, ViewPageActivity.class);
     }
 
