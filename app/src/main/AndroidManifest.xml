@@ -35,5 +35,6 @@
         <activity android:name=".activity.ListViewActivity" />
         <activity android:name=".activity.ConstraintLayoutActivity" />
         <activity android:name="com.example.learnandroidjava.activity.RecyclerViewActivity" />
+        <activity android:name="com.example.learnandroidjava.activity.FrameByFrameActivity" />
     </application>
 </manifest>

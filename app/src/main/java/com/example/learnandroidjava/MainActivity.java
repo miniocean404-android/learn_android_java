@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.learnandroidjava.activity.BaseActivity;
 import com.example.learnandroidjava.activity.ConstraintLayoutActivity;
+import com.example.learnandroidjava.activity.FrameByFrameActivity;
 import com.example.learnandroidjava.activity.FrameLayoutActivity;
 import com.example.learnandroidjava.activity.GridLayoutActivity;
 import com.example.learnandroidjava.activity.ListViewActivity;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         jump(this,R.id.go_constraint_layout_btn, ConstraintLayoutActivity.class);
         jump(this,R.id.go_list_view_btn, ListViewActivity.class);
         jump(this,R.id.go_recycler_view_btn, RecyclerViewActivity.class);
+        jump(this,R.id.go_frame_by_frame_btn, FrameByFrameActivity.class);
     }
 
     private void jump(Activity activity,@IdRes int id,Class<?> cls){

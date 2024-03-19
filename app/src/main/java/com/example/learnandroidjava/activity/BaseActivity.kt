@@ -66,7 +66,7 @@ class BaseActivity: AppCompatActivity() {
         /*
           触摸事件
           当返回值为true时，表示事件已经被处理，不会再传递给 onClick onLong 监听器
-         */learn_button_event.setOnTouchListener { view, event ->
+         */learn_button_event.setOnTouchListener { _, event ->
             Log.e(tag, "触摸事件触发" + event.action)
             false
         }

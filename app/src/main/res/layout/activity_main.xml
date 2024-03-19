@@ -73,4 +73,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
+    <Button
+        android:text="逐帧动画"
+        android:id="@+id/go_frame_by_frame_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
 </GridLayout>
