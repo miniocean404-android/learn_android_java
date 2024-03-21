@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.UseFragmentActivity"
+    android:orientation="vertical">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/use_fragment"
+        android:name="com.example.learnandroidjava.fragment.UseFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/red"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/use_fragment_change_btn"
+        android:text="改变"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"/>
+
+    <Button
+        android:id="@+id/use_fragment_replace_btn"
+        android:text="替换"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"/>
+
+    <FrameLayout
+        android:layout_weight="1"
+        android:id="@+id/use_fragment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/teal_200"/>
+
+</LinearLayout>

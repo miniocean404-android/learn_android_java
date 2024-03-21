@@ -1,8 +1,8 @@
 pluginManagement {
     repositories {
-        # 镜像：https://blog.csdn.net/qq_57474766/article/details/132644097
+        // 镜像：https://blog.csdn.net/qq_57474766/article/details/132644097
         maven(url = uri("https://maven.aliyun.com/repository/google"))
-        maven(url = uri("http://maven.aliyun.com/nexus/content/groups/public"))
+        maven(url = uri("https://maven.aliyun.com/nexus/content/groups/public"))
         maven(url = uri("https://maven.aliyun.com/repository/jcenter"))
 
         google {
@@ -20,7 +20,7 @@ dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         maven(url = uri("https://maven.aliyun.com/repository/google"))
-        maven(url = uri("http://maven.aliyun.com/nexus/content/groups/public"))
+        maven(url = uri("https://maven.aliyun.com/nexus/content/groups/public"))
         maven(url = uri("https://maven.aliyun.com/repository/jcenter"))
 
         google()

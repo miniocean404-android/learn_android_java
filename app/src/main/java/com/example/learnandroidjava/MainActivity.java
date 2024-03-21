@@ -23,6 +23,7 @@ import com.example.learnandroidjava.activity.RecyclerViewActivity;
 import com.example.learnandroidjava.activity.RelativeLayoutActivity;
 import com.example.learnandroidjava.activity.TableLayoutActivity;
 import com.example.learnandroidjava.activity.TweenActivity;
+import com.example.learnandroidjava.activity.UseFragmentActivity;
 import com.example.learnandroidjava.activity.ViewPageActivity;
 
 
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         jump(this,R.id.go_prop_btn, PropAnimActivity.class);
         jump(this,R.id.go_view_page_btn, ViewPageActivity.class);
         jump(this,R.id.go_ok_http_btn, OkHttpActivity.class);
+        jump(this,R.id.go_use_fragment_btn, UseFragmentActivity.class);
     }
 
     private void jump(Activity activity,@IdRes int id,Class<?> cls){

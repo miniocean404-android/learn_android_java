@@ -102,4 +102,19 @@
         android:id="@+id/go_ok_http_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
+    <Button
+        android:text="使用 fragment"
+        android:id="@+id/go_use_fragment_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:text="使用 view_page2"
+        android:id="@+id/go_view_page2_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10dp"
+        android:background="@drawable/button_radius"
+        />
 </GridLayout>
