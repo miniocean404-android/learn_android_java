@@ -10,7 +10,7 @@ https://mp.weixin.qq.com/s/qR0hmc7dq3cNcKFxItxLSg
 https://github.com/android/architecture-samples
 
 ## 库
-### 组件库
+### 项目实战
 https://github.com/getActivity/AndroidProject
 
 ### 日志
@@ -35,3 +35,6 @@ https://github.com/getActivity/Toaster
 https://github.com/scwang90/SmartRefreshLayout
 
 ### cling 投屏
+
+### event bus
+https://github.com/greenrobot/EventBus
