@@ -2,11 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
     <!-- 添加网络权限 -->
-    <uses-permission android:name="android.permission.INTERNET" /> <!-- 发送通知权限申请 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 发送通知权限申请 -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
 
+    <!--  allowNativeHeapPointerTagging 兼容 ijkplayer：v8a架构问题（多了一个多余的安全机制问题）  -->
     <application
         android:allowBackup="true"
+        android:allowNativeHeapPointerTagging="false"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
@@ -15,6 +21,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnAndroidJava"
         tools:targetApi="31">
+        <!-- 沉浸导航栏 适配华为（huawei）刘海屏-->
+        <meta-data
+            android:name="android.notch_support"
+            android:value="true"/>
+        <!-- 沉浸导航栏 适配小米（xiaomi）刘海屏-->
+        <meta-data
+            android:name="notch.config"
+            android:value="portrait|landscape" />
+
+        <activity
+            android:name=".activity.IjkplayerActivity"
+            android:exported="false" />
         <activity
             android:name=".activity.ViewPage2Activity"
             android:exported="false" />
