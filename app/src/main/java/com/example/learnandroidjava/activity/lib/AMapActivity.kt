@@ -34,6 +34,7 @@ import java.util.Locale
  */
 class AMapActivity : AppCompatActivity() {
     private val TAG: String? = AMapActivity::class.simpleName
+    private val apiKey: String ="04f07a130c4cd17934bfde4c448fa3a3"
 
     private val bind: ActivityAmapBinding by lazy {
         ActivityAmapBinding.inflate(layoutInflater)
@@ -51,7 +52,6 @@ class AMapActivity : AppCompatActivity() {
         setContentView(bind.root)
 
         getPermissions()
-
         mMapView = bind.amap
         if (aMap == null) {
             aMap = mMapView!!.map
@@ -61,7 +61,7 @@ class AMapActivity : AppCompatActivity() {
         setAMapStyle()
 
         Log.i(TAG, "onCreate: ${getSha1(this)}", )
-        AMapLocationClient.setApiKey("04f07a130c4cd17934bfde4c448fa3a3")
+        AMapLocationClient.setApiKey(apiKey)
 
         try {
             mLocationClient = AMapLocationClient(this@AMapActivity)

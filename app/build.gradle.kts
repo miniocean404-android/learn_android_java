@@ -34,7 +34,7 @@ android {
     }
 
     sourceSets {
-        // 指定本地三方依赖位置
+        // 指定本地三方依赖位置(有问题)
         // getByName("main") {
         //    jniLibs.srcDirs("libs")
         // }
