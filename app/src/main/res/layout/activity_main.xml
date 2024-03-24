@@ -130,4 +130,59 @@
         android:textSize="10dp"
         android:background="@drawable/button_radius"
         />
+
+    <Button
+        android:text="使用视图绑定"
+        android:id="@+id/go_view_binding_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textSize="10dp"
+        android:background="@drawable/button_radius"
+        />
+
+    <Button
+        android:text="使用 Glide"
+        android:id="@+id/go_glide_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textSize="10dp"
+        android:background="@drawable/button_radius"
+        />
+
+    <Button
+        android:text="高德地图"
+        android:id="@+id/go_amap_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textSize="10dp"
+        android:background="@drawable/button_radius"
+        />
+
+    <Button
+        android:text="获取权限"
+        android:id="@+id/go_permissions_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textSize="10dp"
+        android:background="@drawable/button_radius"
+        />
+
+    <Button
+        android:text="后台服务"
+        android:id="@+id/go_service_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textSize="10dp"
+        android:background="@drawable/button_radius"
+        />
 </GridLayout>

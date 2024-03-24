@@ -3,41 +3,39 @@ package com.example.learnandroidjava;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.Context;
+import android.app.Service;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.annotation.IdRes;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.learnandroidjava.activity.BaseActivity;
-import com.example.learnandroidjava.activity.ConstraintLayoutActivity;
-import com.example.learnandroidjava.activity.FrameByFrameActivity;
-import com.example.learnandroidjava.activity.FrameLayoutActivity;
-import com.example.learnandroidjava.activity.GridLayoutActivity;
-import com.example.learnandroidjava.activity.IjkplayerActivity;
-import com.example.learnandroidjava.activity.ListViewActivity;
-import com.example.learnandroidjava.activity.OkHttpActivity;
-import com.example.learnandroidjava.activity.PropAnimActivity;
-import com.example.learnandroidjava.activity.RecyclerViewActivity;
-import com.example.learnandroidjava.activity.RelativeLayoutActivity;
-import com.example.learnandroidjava.activity.TableLayoutActivity;
-import com.example.learnandroidjava.activity.TweenActivity;
-import com.example.learnandroidjava.activity.UseFragmentActivity;
-import com.example.learnandroidjava.activity.ViewPage2Activity;
-import com.example.learnandroidjava.activity.ViewPageActivity;
+import com.example.learnandroidjava.activity.base.event.BaseActivity;
+import com.example.learnandroidjava.activity.base.layout.ConstraintLayoutActivity;
+import com.example.learnandroidjava.activity.base.anim.FrameByFrameActivity;
+import com.example.learnandroidjava.activity.base.layout.FrameLayoutActivity;
+import com.example.learnandroidjava.activity.base.layout.GridLayoutActivity;
+import com.example.learnandroidjava.activity.base.event.ViewBindingActivity;
+import com.example.learnandroidjava.activity.base.service.ServiceActivity;
+import com.example.learnandroidjava.activity.lib.AMapActivity;
+import com.example.learnandroidjava.activity.lib.IjkplayerActivity;
+import com.example.learnandroidjava.activity.base.scroll.ListViewActivity;
+import com.example.learnandroidjava.activity.lib.LibGlideActivity;
+import com.example.learnandroidjava.activity.lib.OkHttpActivity;
+import com.example.learnandroidjava.activity.base.anim.PropAnimActivity;
+import com.example.learnandroidjava.activity.base.scroll.RecyclerViewActivity;
+import com.example.learnandroidjava.activity.base.layout.RelativeLayoutActivity;
+import com.example.learnandroidjava.activity.base.layout.TableLayoutActivity;
+import com.example.learnandroidjava.activity.base.anim.TweenActivity;
+import com.example.learnandroidjava.activity.base.fragment.UseFragmentActivity;
+import com.example.learnandroidjava.activity.base.scroll.ViewPage2Activity;
+import com.example.learnandroidjava.activity.base.scroll.ViewPageActivity;
+import com.example.learnandroidjava.activity.lib.PermissionsActivity;
 import com.gyf.immersionbar.ImmersionBar;
-import com.hjq.permissions.OnPermissionCallback;
-import com.hjq.permissions.Permission;
-import com.hjq.permissions.XXPermissions;
 import com.hjq.toast.Toaster;
 import com.simple.spiderman.SpiderMan;
-
-import java.util.List;
 
 import xcrash.XCrash;
 
@@ -52,41 +50,8 @@ public class MainActivity extends AppCompatActivity {
         XCrash.init(this);
         SpiderMan.setTheme(com.simple.spiderman.utils.R.style.SpiderManTheme_Dark);
         Toaster.init(this.getApplication());
-
         ImmersionBar.with(this).transparentBar().autoDarkModeEnable(true).init();
 
-        // AndroidManifest.xml 申请前需要在 android 中添加对应的权限
-        XXPermissions.with(this)
-                // 申请单个权限
-                .permission(Permission.RECORD_AUDIO)
-                // 申请多个权限
-                .permission(Permission.Group.CALENDAR)
-                // 设置权限请求拦截器（局部设置）
-                //.interceptor(new PermissionInterceptor())
-                // 设置不触发错误检测机制（局部设置）
-                //.unchecked()
-                .request(new OnPermissionCallback() {
-
-                    @Override
-                    public void onGranted(@NonNull List<String> permissions, boolean allGranted) {
-                        if (!allGranted) {
-                            Toaster.show("获取部分权限成功，但部分权限未正常授予");
-                            return;
-                        }
-                        Toaster.show("获取录音和日历权限成功");
-                    }
-
-                    @Override
-                    public void onDenied(@NonNull List<String> permissions, boolean doNotAskAgain) {
-                        if (doNotAskAgain) {
-                            Toaster.show("被永久拒绝授权，请手动授予录音和日历权限");
-                            // 如果是被永久拒绝就跳转到应用权限系统设置页面
-                            XXPermissions.startPermissionActivity(MainActivity.this, permissions);
-                        } else {
-                            Toaster.show("获取录音和日历权限失败");
-                        }
-                    }
-                });
 
         jump(this,R.id.go_base_btn, BaseActivity.class);
         jump(this,R.id.go_relative_layout_btn, RelativeLayoutActivity.class);
@@ -104,9 +69,47 @@ public class MainActivity extends AppCompatActivity {
         jump(this,R.id.go_use_fragment_btn, UseFragmentActivity.class);
         jump(this,R.id.go_view_page2_btn, ViewPage2Activity.class);
         jump(this,R.id.go_ijkplayer_btn, IjkplayerActivity.class);
+        jump(this,R.id.go_view_binding_btn, ViewBindingActivity.class);
+        jump(this,R.id.go_glide_btn, LibGlideActivity.class);
+        jump(this,R.id.go_amap_btn, AMapActivity.class);
+        jump(this,R.id.go_permissions_btn, PermissionsActivity.class);
+        jump(this,R.id.go_service_btn, ServiceActivity.class);
     }
 
-    private void jump(Activity activity,@IdRes int id,Class<?> cls){
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    /**
+     * 画面展示了
+     */
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    private void jump(Activity activity, @IdRes int id, Class<?> cls){
         Intent intent = new Intent(activity, cls);
         Button btn = findViewById(id);
 

@@ -4,6 +4,8 @@ pluginManagement {
         maven(url = uri("https://maven.aliyun.com/repository/google"))
         maven(url = uri("https://maven.aliyun.com/nexus/content/groups/public"))
         maven(url = uri("https://maven.aliyun.com/repository/jcenter"))
+        // shiply 热修复
+        maven(url = uri("https://tencent-tds-maven.pkg.coding.net/repository/shiply/repo"))
 
         google {
             content {
@@ -22,6 +24,7 @@ dependencyResolutionManagement {
         maven(url = uri("https://maven.aliyun.com/repository/google"))
         maven(url = uri("https://maven.aliyun.com/nexus/content/groups/public"))
         maven(url = uri("https://maven.aliyun.com/repository/jcenter"))
+        maven(url = uri("https://tencent-tds-maven.pkg.coding.net/repository/shiply/repo"))
 
         google()
         mavenCentral()

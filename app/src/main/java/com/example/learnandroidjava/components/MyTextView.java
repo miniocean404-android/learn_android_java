@@ -2,14 +2,12 @@ package com.example.learnandroidjava.components;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.widget.TextView;
-
 import androidx.annotation.Nullable;
 
 /**
  * 自定义 TextView 组件
  */
-public class MyTextView extends TextView {
+public class MyTextView extends androidx.appcompat.widget.AppCompatTextView {
 
     public MyTextView(Context context) {
         super(context);

@@ -1,6 +1,18 @@
+import com.android.build.gradle.internal.api.BaseVariantOutputImpl
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Properties
+import java.util.TimeZone
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    // kotlin("kapt")
+}
+
+val keystorePropFile = rootProject.file("app/key.properties")
+val keystoreProps = Properties().apply {
+    load(keystorePropFile.inputStream())
 }
 
 android {
@@ -17,16 +29,39 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         ndk {
-            abiFilters.add("armeabi-v7a")
-            abiFilters.add("arm64-v8a")
-            abiFilters.add("x86")
-            abiFilters.add("x86_64")
+            abiFilters += listOf("armeabi-v7a", "arm64-v8a", "x86", "x86_64")
+        }
+    }
+
+    sourceSets {
+        // 指定本地三方依赖位置
+        // getByName("main") {
+        //    jniLibs.srcDirs("libs")
+        // }
+    }
+
+    signingConfigs {
+        register("release") {
+            keyAlias = keystoreProps["keyAlias"] as String
+            keyPassword = keystoreProps["keyPassword"] as String
+            storeFile = file(keystoreProps["storeFile"] as String)
+            storePassword = keystoreProps["storePassword"] as String
         }
     }
 
     buildTypes {
-        release {
+        debug {
             isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+
+        release {
+            signingConfig = signingConfigs.getByName("release")
+
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -34,25 +69,49 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = JavaVersion.VERSION_17.toString()
     }
+
     buildFeatures {
+        // 启动视图绑定
         viewBinding = true
+    }
+
+
+    // 打包名称配置
+    applicationVariants.all {
+        val variant = this
+        variant.outputs
+            .map { it as BaseVariantOutputImpl }
+            .forEach { output ->
+                if (variant.buildType.name == "release") {
+                    val dateFormat = SimpleDateFormat("yyyyMMddHHmm")
+                    dateFormat.timeZone = TimeZone.getTimeZone("Asia/Shanghai")
+                    val date = dateFormat.format(Date())
+                    val outputFileName =
+                        "学习安卓开发-${variant.baseName}-${variant.versionName}-${variant.versionCode}-${date}.apk"
+                    output.outputFileName = outputFileName
+                }
+            }
     }
 }
 
-dependencies {
 
+
+
+dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.legacy.support.v4)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -69,8 +128,9 @@ dependencies {
     implementation(libs.ijkplayer.arm64)
     implementation(libs.ijkplayer.x86)
     implementation(libs.ijkplayer.x8664)
+
     // 可选
-    //implementation("tv.danmaku.ijk.media:ijkplayer-armv5:0.8.8")
+    // implementation("tv.danmaku.ijk.media:ijkplayer-armv5:0.8.8")
 
     // xCrash Android - 捕获 Java 崩溃，native 崩溃和 ANR 的能力
     implementation(libs.xcrash)
@@ -96,4 +156,12 @@ dependencies {
 
     // 手机查看崩溃日志
     implementation(libs.spiderman)
+
+    // 图片优化加载库
+    implementation(libs.glide2)
+    // kapt(libs.glide2.compiler)
+
+    // 高德地图
+    implementation(files("libs/arr/AMap3DMap_10.0.600_AMapSearch_9.7.1_AMapLocation_6.4.3_20240314.aar"))
 }
+

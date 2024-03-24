@@ -1,3 +1,6 @@
+## 文章
+1. 在项目中引入 arr: https://liarrdev.github.io/post/How-to-Import-AAR-in-Android-Studio/
+
 ### 沉浸式状态栏
 https://juejin.cn/post/7203563038301061181#heading-4
 https://juejin.cn/post/7075578574362640421
@@ -38,3 +41,17 @@ https://github.com/scwang90/SmartRefreshLayout
 
 ### event bus
 https://github.com/greenrobot/EventBus
+
+### 扫码
+https://blog.csdn.net/qq_29848853/article/details/131057600
+
+### 热更新 tinker
+
+### 高德地图引入
+#### debug 模式接入
+https://lbs.amap.com/faq/android/map-sdk/create-project/43112
+1. keytool -v -list -keystore ~/.android/debug.keystore
+2. 输入密码：android
+3. 找到指纹证书下的 SHA1 值
+#### 引入高德 sdk
+https://lbs.amap.com/api/android-sdk/guide/create-project/android-studio-create-project

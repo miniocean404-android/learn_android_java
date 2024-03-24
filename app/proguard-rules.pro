@@ -45,3 +45,6 @@
 -dontwarn com.squareup.javawriter.JavaWriter
 # Uncomment this if you use Mockito
 -dontwarn org.mockito.**
+
+# dontwarn 用于告诉 ProGuard 在优化和混淆代码时不要输出警告消息。通常用于防止特定类或方法的警告信息出现，尤其是在使用第三方库时可能会用到
+# -keep 用于指示 ProGuard 保留特定类、方法或字段，以避免被优化和混淆。可以使用 keep 来确保某些类或成员变量不被移除
