@@ -13,15 +13,17 @@ import com.example.learnandroidjava.shared.service.CustomService
 
 class ServiceActivity : AppCompatActivity() {
     private val TAG: String? = ServiceActivity::class.simpleName
+    private var isBind = false
 
     private val bind: ActivityServiceBinding by lazy {
         ActivityServiceBinding.inflate(layoutInflater)
     }
 
-    private  val connection = object : ServiceConnection {
+    private val connection = object : ServiceConnection {
         override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
             Log.i(TAG, "onServiceConnected: ")
         }
+
         override fun onServiceDisconnected(name: ComponentName?) {
             Log.i(TAG, "onServiceDisconnected: ")
         }
@@ -43,8 +45,7 @@ class ServiceActivity : AppCompatActivity() {
 
         bind.startBind.setOnClickListener {
             val intent = Intent(this, CustomService::class.java)
-
-            bindService(intent,connection,Context.BIND_AUTO_CREATE)
+            isBind = bindService(intent, connection, Context.BIND_AUTO_CREATE)
         }
         bind.stopBind.setOnClickListener {
             unbindService(connection)
@@ -52,10 +53,10 @@ class ServiceActivity : AppCompatActivity() {
     }
 
     /**
-     * 一般业务情况是这样写的，不用手动解绑
+     * 一般业务情况是这样写的，并且必须绑定了才可以这做 不用手动解绑
      */
     override fun onDestroy() {
+        if (isBind) unbindService(connection)
         super.onDestroy()
-        unbindService(connection)
     }
 }

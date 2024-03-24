@@ -7,7 +7,8 @@ import java.util.TimeZone
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    // kotlin("kapt")
+    // 对应 gradle 配置： apply plugin: 'xxx'
+    // id("com.google.devtools.ksp") version "1.9.21-1.0.15"
 }
 
 val keystorePropFile = rootProject.file("app/key.properties")
@@ -159,7 +160,7 @@ dependencies {
 
     // 图片优化加载库
     implementation(libs.glide2)
-    // kapt(libs.glide2.compiler)
+    // ksp(libs.glide2.ksp)
 
     // 高德地图
     implementation(files("libs/arr/AMap3DMap_10.0.600_AMapSearch_9.7.1_AMapLocation_6.4.3_20240314.aar"))

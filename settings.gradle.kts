@@ -7,6 +7,9 @@ pluginManagement {
         // shiply 热修复
         maven(url = uri("https://tencent-tds-maven.pkg.coding.net/repository/shiply/repo"))
 
+        // kapt 升级版 ksp
+        maven("https://dl.bintray.com/kotlin/kotlin-eap")
+
         google {
             content {
                 includeGroupByRegex("com\\.android.*")
@@ -25,6 +28,7 @@ dependencyResolutionManagement {
         maven(url = uri("https://maven.aliyun.com/nexus/content/groups/public"))
         maven(url = uri("https://maven.aliyun.com/repository/jcenter"))
         maven(url = uri("https://tencent-tds-maven.pkg.coding.net/repository/shiply/repo"))
+        maven("https://dl.bintray.com/kotlin/kotlin-eap")
 
         google()
         mavenCentral()

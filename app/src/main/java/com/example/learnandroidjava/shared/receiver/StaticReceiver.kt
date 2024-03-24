@@ -5,9 +5,9 @@ import android.content.Context
 import android.content.Intent
 import android.util.Log
 
-class CustomReceiver : BroadcastReceiver(){
-    private val TAG: String? = CustomReceiver::class.simpleName
+class StaticReceiver : BroadcastReceiver(){
+    private val TAG: String? = StaticReceiver::class.simpleName
     override fun onReceive(p0: Context?, p1: Intent?) {
-        Log.i(TAG, "BroadcastReceiver onReceive: 广播接受者")
+        Log.i(TAG, "BroadcastReceiver onReceive: 静态广播接受者")
     }
 }

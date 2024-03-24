@@ -107,10 +107,10 @@
 
         <!-- 静态注册广播接受者 -->
         <receiver
-            android:name=".shared.receiver.CustomReceiver"
+            android:name=".shared.receiver.StaticReceiver"
+            tools:ignore=""
             android:exported="true"
-            android:permission="TODO"
-            tools:ignore="ExportedReceiver">
+            android:permission="TODO">
             <intent-filter>
                 <action android:name="com.xx.__StaticReceiverFlag" />
             </intent-filter>

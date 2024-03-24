@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
         jump(this,R.id.go_amap_btn, AMapActivity.class);
         jump(this,R.id.go_permissions_btn, PermissionsActivity.class);
         jump(this,R.id.go_receiver_btn, ReceiverActivity.class);
+        jump(this,R.id.go_service_btn, ServiceActivity.class);
     }
 
     @Override

@@ -55,3 +55,6 @@ https://lbs.amap.com/faq/android/map-sdk/create-project/43112
 3. 找到指纹证书下的 SHA1 值
 #### 引入高德 sdk
 https://lbs.amap.com/api/android-sdk/guide/create-project/android-studio-create-project
+
+### 图片内存优化 Glide
+https://bumptech.github.io/glide/doc/download-setup.html
