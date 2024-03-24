@@ -6,7 +6,6 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.os.Build
 import android.os.Bundle
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.example.learnandroidjava.activity.base.service.ServiceActivity
 import com.example.learnandroidjava.databinding.ActivityReceiverBinding
