@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.example.learnandroidjava.R
 import com.example.learnandroidjava.R.id.view_pager
-import com.example.learnandroidjava.adapter.ViewPageAdapter
+import com.example.learnandroidjava.shared.adapter.ViewPageAdapter
 
 class ViewPageActivity : AppCompatActivity() {
     @SuppressLint("InflateParams")

@@ -5,7 +5,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.learnandroidjava.databinding.ActivityLibGlideBinding
-import com.example.learnandroidjava.utils.glide.MyGlideApp
+import com.example.learnandroidjava.shared.utils.glide.MyGlideApp
 
 class LibGlideActivity : AppCompatActivity() {
     private val tag = LibGlideActivity::class.java.simpleName

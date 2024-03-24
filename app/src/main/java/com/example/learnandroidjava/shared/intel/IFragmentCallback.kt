@@ -1,4 +1,4 @@
-package com.example.learnandroidjava.intel
+package com.example.learnandroidjava.shared.intel
 
 interface IFragmentCallback {
     fun sendToActivity(message: String)

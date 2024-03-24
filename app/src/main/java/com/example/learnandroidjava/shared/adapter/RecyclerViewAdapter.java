@@ -1,18 +1,16 @@
-package com.example.learnandroidjava.adapter;
+package com.example.learnandroidjava.shared.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.learnandroidjava.R;
-import com.example.learnandroidjava.bean.ListViewBean;
-import com.example.learnandroidjava.bean.RecyclerViewBean;
+import com.example.learnandroidjava.shared.bean.RecyclerViewBean;
 
 import java.util.List;
 

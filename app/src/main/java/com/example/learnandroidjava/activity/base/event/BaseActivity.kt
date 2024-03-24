@@ -22,7 +22,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.app.NotificationCompat
 import com.example.learnandroidjava.R
 import com.example.learnandroidjava.activity.base.api.NoticeActivity
-import com.example.learnandroidjava.utils.DynamicNotice.requestNotificationPermission
+import com.example.learnandroidjava.shared.utils.DynamicNotice.requestNotificationPermission
 
 class BaseActivity: AppCompatActivity() {
     private val tag = "mini_ocean"

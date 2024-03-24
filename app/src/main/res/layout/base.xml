@@ -220,7 +220,7 @@
         <requestFocus />
     </TextView>
 
-    <com.example.learnandroidjava.components.MyTextView
+    <com.example.learnandroidjava.components.CustomMyTextView
         android:id="@+id/learn_text_view3"
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -241,6 +241,6 @@
         android:textSize="30sp"
         android:textStyle="italic">
 
-    </com.example.learnandroidjava.components.MyTextView>
+    </com.example.learnandroidjava.components.CustomMyTextView>
 
 </LinearLayout>

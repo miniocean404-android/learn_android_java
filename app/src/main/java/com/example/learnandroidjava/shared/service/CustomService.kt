@@ -1,4 +1,4 @@
-package com.example.learnandroidjava.service
+package com.example.learnandroidjava.shared.service
 
 import android.app.Service
 import android.content.Intent
@@ -8,9 +8,9 @@ import android.util.Log
 /**
  * 用于后台播放音乐等后台服务
  */
-class SendService : Service() {
+class CustomService : Service() {
 
-    private val TAG = SendService::class.simpleName
+    private val TAG = CustomService::class.simpleName
 
     override fun onCreate() {
         Log.i(TAG, "onCreate: ")

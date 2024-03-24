@@ -2,20 +2,14 @@ package com.example.learnandroidjava.activity.base.scroll;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.LinearLayout;
-import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.example.learnandroidjava.R;
-import com.example.learnandroidjava.adapter.ListViewAdapter;
-import com.example.learnandroidjava.adapter.RecyclerViewAdapter;
-import com.example.learnandroidjava.bean.ListViewBean;
-import com.example.learnandroidjava.bean.RecyclerViewBean;
+import com.example.learnandroidjava.shared.adapter.RecyclerViewAdapter;
+import com.example.learnandroidjava.shared.bean.RecyclerViewBean;
 
 import java.util.ArrayList;
 import java.util.List;

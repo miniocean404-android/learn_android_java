@@ -1,4 +1,4 @@
-package com.example.learnandroidjava.adapter;
+package com.example.learnandroidjava.shared.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.learnandroidjava.R;
-import com.example.learnandroidjava.bean.ListViewBean;
+import com.example.learnandroidjava.shared.bean.ListViewBean;
 
 import java.util.List;
 

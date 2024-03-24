@@ -11,7 +11,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import com.example.learnandroidjava.R
-import com.example.learnandroidjava.intel.IFragmentCallback
+import com.example.learnandroidjava.shared.intel.IFragmentCallback
 
 class UseFragment : Fragment() ,View.OnClickListener{
     private val tag: String = "mini_ocean"

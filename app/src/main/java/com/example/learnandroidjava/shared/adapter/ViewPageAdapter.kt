@@ -1,4 +1,4 @@
-package com.example.learnandroidjava.adapter
+package com.example.learnandroidjava.shared.adapter
 
 import android.view.View
 import android.view.ViewGroup

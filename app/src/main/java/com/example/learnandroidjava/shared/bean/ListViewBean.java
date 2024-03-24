@@ -1,4 +1,4 @@
-package com.example.learnandroidjava.bean;
+package com.example.learnandroidjava.shared.bean;
 
 public class ListViewBean {
     String name;

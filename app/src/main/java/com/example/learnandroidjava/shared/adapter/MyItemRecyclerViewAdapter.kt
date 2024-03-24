@@ -1,4 +1,4 @@
-package com.example.learnandroidjava.adapter
+package com.example.learnandroidjava.shared.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater

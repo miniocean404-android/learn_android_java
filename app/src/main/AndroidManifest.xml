@@ -100,8 +100,23 @@
         <meta-data
             android:name="notch.config"
             android:value="portrait|landscape" /> <!-- 沉浸导航栏 适配小米（xiaomi）刘海屏 -->
-        <!-- 注册服务 -->
-        <service android:name=".service.SendService" />
+
+
+        <service android:name=".shared.service.CustomService" /> <!-- 注册服务 -->
+
+
+        <!-- 静态注册广播接受者 -->
+        <receiver
+            android:name=".shared.receiver.CustomReceiver"
+            android:exported="true"
+            android:permission="TODO"
+            tools:ignore="ExportedReceiver">
+            <intent-filter>
+                <action android:name="com.xx.__StaticReceiverFlag" />
+            </intent-filter>
+        </receiver>
+
+
     </application>
 
 </manifest>

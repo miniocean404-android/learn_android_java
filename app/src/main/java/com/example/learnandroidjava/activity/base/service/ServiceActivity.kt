@@ -9,7 +9,7 @@ import android.os.IBinder
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.learnandroidjava.databinding.ActivityServiceBinding
-import com.example.learnandroidjava.service.SendService
+import com.example.learnandroidjava.shared.service.CustomService
 
 class ServiceActivity : AppCompatActivity() {
     private val TAG: String? = ServiceActivity::class.simpleName
@@ -32,17 +32,17 @@ class ServiceActivity : AppCompatActivity() {
         setContentView(bind.root)
 
         bind.startService.setOnClickListener {
-            val intent = Intent(this, SendService::class.java)
+            val intent = Intent(this, CustomService::class.java)
             startService(intent)
         }
         bind.stopService.setOnClickListener {
-            val intent = Intent(this, SendService::class.java)
+            val intent = Intent(this, CustomService::class.java)
             stopService(intent)
         }
 
 
         bind.startBind.setOnClickListener {
-            val intent = Intent(this, SendService::class.java)
+            val intent = Intent(this, CustomService::class.java)
 
             bindService(intent,connection,Context.BIND_AUTO_CREATE)
         }

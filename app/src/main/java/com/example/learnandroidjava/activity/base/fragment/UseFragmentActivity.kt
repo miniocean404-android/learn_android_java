@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import com.example.learnandroidjava.R
 import com.example.learnandroidjava.fragment.ReplaceFragment
 import com.example.learnandroidjava.fragment.UseFragment
-import com.example.learnandroidjava.intel.IFragmentCallback
+import com.example.learnandroidjava.shared.intel.IFragmentCallback
 
 class UseFragmentActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {

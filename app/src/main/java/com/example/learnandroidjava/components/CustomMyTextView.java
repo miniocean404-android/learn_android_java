@@ -7,17 +7,17 @@ import androidx.annotation.Nullable;
 /**
  * 自定义 TextView 组件
  */
-public class MyTextView extends androidx.appcompat.widget.AppCompatTextView {
+public class CustomMyTextView extends androidx.appcompat.widget.AppCompatTextView {
 
-    public MyTextView(Context context) {
+    public CustomMyTextView(Context context) {
         super(context);
     }
 
-    public MyTextView(Context context, @Nullable AttributeSet attrs) {
+    public CustomMyTextView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public MyTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public CustomMyTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 

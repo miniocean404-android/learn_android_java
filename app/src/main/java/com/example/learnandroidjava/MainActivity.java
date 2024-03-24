@@ -18,6 +18,7 @@ import com.example.learnandroidjava.activity.base.anim.FrameByFrameActivity;
 import com.example.learnandroidjava.activity.base.layout.FrameLayoutActivity;
 import com.example.learnandroidjava.activity.base.layout.GridLayoutActivity;
 import com.example.learnandroidjava.activity.base.event.ViewBindingActivity;
+import com.example.learnandroidjava.activity.base.receiver.ReceiverActivity;
 import com.example.learnandroidjava.activity.base.service.ServiceActivity;
 import com.example.learnandroidjava.activity.lib.AMapActivity;
 import com.example.learnandroidjava.activity.lib.IjkplayerActivity;
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         jump(this,R.id.go_glide_btn, LibGlideActivity.class);
         jump(this,R.id.go_amap_btn, AMapActivity.class);
         jump(this,R.id.go_permissions_btn, PermissionsActivity.class);
-        jump(this,R.id.go_service_btn, ServiceActivity.class);
+        jump(this,R.id.go_receiver_btn, ReceiverActivity.class);
     }
 
     @Override
