@@ -34,6 +34,7 @@ import com.example.learnandroidjava.activity.base.fragment.UseFragmentActivity;
 import com.example.learnandroidjava.activity.base.scroll.ViewPage2Activity;
 import com.example.learnandroidjava.activity.base.scroll.ViewPageActivity;
 import com.example.learnandroidjava.activity.lib.PermissionsActivity;
+import com.example.learnandroidjava.activity.lib.RxJavaActivity;
 import com.gyf.immersionbar.ImmersionBar;
 import com.hjq.toast.Toaster;
 import com.simple.spiderman.SpiderMan;
@@ -76,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
         jump(this,R.id.go_permissions_btn, PermissionsActivity.class);
         jump(this,R.id.go_receiver_btn, ReceiverActivity.class);
         jump(this,R.id.go_service_btn, ServiceActivity.class);
+        jump(this,R.id.go_rx_java_btn, RxJavaActivity.class);
     }
 
     @Override

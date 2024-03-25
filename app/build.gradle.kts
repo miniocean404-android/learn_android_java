@@ -183,5 +183,10 @@ dependencies {
 
     // json 序列化
     implementation(libs.google.gson)
+
+    // Rx
+    implementation(libs.io.reactivex.rxjava3.rxandroid)
+    implementation(libs.reactivex.rxjava)
+    implementation(libs.rxjava3.rxkotlin)
 }
 
