@@ -180,5 +180,8 @@ dependencies {
 
     // GIF drawable
     implementation(libs.android.gif.drawable)
+
+    // json 序列化
+    implementation(libs.google.gson)
 }
 
