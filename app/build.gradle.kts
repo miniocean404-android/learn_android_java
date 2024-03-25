@@ -164,5 +164,21 @@ dependencies {
 
     // 高德地图
     implementation(files("libs/arr/AMap3DMap_10.0.600_AMapSearch_9.7.1_AMapLocation_6.4.3_20240314.aar"))
+
+
+    // 图片内存优化 fresco
+    implementation(libs.fresco)
+    // For animated GIF support
+    implementation(libs.fresco.animated.gif)
+    // For WebP support, including animated WebP
+    implementation(libs.fresco.animated.webp)
+    implementation(libs.fresco.webpsupport)
+    // For WebP support, without animations
+    implementation(libs.fresco.facebook.webpsupport)
+    // Provide the Android support library (you might already have this or a similar dependency)
+    implementation(libs.fresco.support.core.utils)
+
+    // GIF drawable
+    implementation(libs.android.gif.drawable)
 }
 
