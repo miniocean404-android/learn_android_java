@@ -120,8 +120,8 @@ dependencies {
     // 添加 recycler_view 依赖
     implementation(libs.androidx.recyclerview)
 
-    // okhttp
-    implementation(libs.com.squareup.okhttp3.okhttp)
+    // retrofit 封装了 okhttp，并且引入它同时也会引入 okhttp
+    implementation(libs.com.squareup.retrofit2.retrofit)
 
     // ijkplayer
     implementation(libs.tv.ijkplayer.java)
