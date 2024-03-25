@@ -48,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        XCrash.init(this);
-        SpiderMan.setTheme(com.simple.spiderman.utils.R.style.SpiderManTheme_Dark);
-        Toaster.init(this.getApplication());
+//        XCrash.init(this);
+//        SpiderMan.setTheme(com.simple.spiderman.utils.R.style.SpiderManTheme_Dark);
+//        Toaster.init(this.getApplication());
         ImmersionBar.with(this).transparentBar().autoDarkModeEnable(true).init();
 
 
