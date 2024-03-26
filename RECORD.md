@@ -58,3 +58,6 @@ https://lbs.amap.com/api/android-sdk/guide/create-project/android-studio-create-
 
 ### 图片内存优化 Glide
 https://bumptech.github.io/glide/doc/download-setup.html
+
+### ijkplayer
+ijkplayer 支持 https: https://juejin.cn/post/7237791494097731641

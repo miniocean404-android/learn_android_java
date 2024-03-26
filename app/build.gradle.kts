@@ -121,7 +121,11 @@ dependencies {
     implementation(libs.androidx.recyclerview)
 
     // retrofit 封装了 okhttp，并且引入它同时也会引入 okhttp
+    // retrofit2.converter Gson 是 retrofit 的 Bean 转换器
+    // adapter.rxjava3 解决嵌套请求回调地狱问题
     implementation(libs.com.squareup.retrofit2.retrofit)
+    implementation(libs.retrofit2.converter.gson)
+    implementation(libs.adapter.rxjava3)
 
     // ijkplayer
     implementation(libs.tv.ijkplayer.java)
