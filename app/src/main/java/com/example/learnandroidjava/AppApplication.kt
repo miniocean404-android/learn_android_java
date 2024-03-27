@@ -1,14 +1,15 @@
 package com.example.learnandroidjava
 
 import android.app.Application
+import android.view.Gravity
+import android.widget.Toast
 import com.facebook.drawee.backends.pipeline.Fresco
-import com.gyf.immersionbar.ImmersionBar
 import com.hjq.toast.Toaster
 import com.simple.spiderman.SpiderMan
 import com.simple.spiderman.utils.R
 import xcrash.XCrash
 
-class AppApplication: Application() {
+class AppApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
@@ -17,5 +18,7 @@ class AppApplication: Application() {
 
         Fresco.initialize(this)
         Toaster.init(this)
+
+        Toaster.setGravity(Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL, 0, 300)
     }
 }

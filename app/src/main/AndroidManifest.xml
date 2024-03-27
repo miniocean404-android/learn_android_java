@@ -1,165 +1,148 @@
-<<<<<<< Original<?xml version="1.0" encoding="utf-8"?><manifest xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools">
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-<uses-feature
-    android:name="android.hardware.camera"
-    android:required="false" />
-<uses-permission android:name="android.permission.INTERNET" /> <!-- 添加网络套接字（网络）权限 -->
-<uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- 发送通知权限申请 -->
-<!-- 允许写入扩展存储，用于写入缓存定位数据 -->
-<uses-permission
-    android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-    android:maxSdkVersion="32"
-    tools:ignore="ScopedStorage" /> <!-- 允许程序设置内置sd卡的写权限 -->
-<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 允许程序访问CellID或WiFi热点来获取粗略的位置 -->
-<!-- 允许获取精确位置，实时导航为必选 -->
-<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 允许获取设备和运营商信息，用于问题排查和网络定位（无gps情况下的定位），若需网络定位功能则必选 -->
-<uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 允许获取网络状态，用于网络定位（无gps情况下的定位），若需网络定位功能则必选 -->
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 允许获取wifi网络信息，用于网络定位（无gps情况下的定位），若需网络定位功能则必选 -->
-<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 允许获取wifi状态改变，用于网络定位（无gps情况下的定位），若需网络定位功能则必选 -->
-<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /> <!-- 后台获取位置信息，若需后台定位或持续导航则必选 -->
-<uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" /> <!-- 用于申请调用A-GPS模块,卫星定位加速 -->
-<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" /> <!-- 用于用户链接蓝牙时，在导航组件页面的蓝牙连接提醒，建立链接后开发者可选用蓝牙通道进行tts播报 -->
-<uses-permission android:name="android.permission.BLUETOOTH" /> <!-- 用与导航状态中保持屏幕常亮 -->
-<uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- 允许写设备缓存，用于问题排查 -->
-<uses-permission
-    android:name="android.permission.WRITE_SETTINGS"
-    tools:ignore="ProtectedPermissions" /> <!-- 允许读设备等信息，用于问题排查 -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 添加网络套接字（网络）权限 -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- 发送通知权限申请 -->
+    <!-- 允许写入扩展存储，用于写入缓存定位数据 -->
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32"
+        tools:ignore="ScopedStorage" /> <!-- 允许程序设置内置sd卡的写权限 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 允许程序访问CellID或WiFi热点来获取粗略的位置 -->
+    <!-- 允许获取精确位置，实时导航为必选 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 允许获取设备和运营商信息，用于问题排查和网络定位（无gps情况下的定位），若需网络定位功能则必选 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 允许获取网络状态，用于网络定位（无gps情况下的定位），若需网络定位功能则必选 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 允许获取wifi网络信息，用于网络定位（无gps情况下的定位），若需网络定位功能则必选 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 允许获取wifi状态改变，用于网络定位（无gps情况下的定位），若需网络定位功能则必选 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /> <!-- 后台获取位置信息，若需后台定位或持续导航则必选 -->
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" /> <!-- 用于申请调用A-GPS模块,卫星定位加速 -->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" /> <!-- 用于用户链接蓝牙时，在导航组件页面的蓝牙连接提醒，建立链接后开发者可选用蓝牙通道进行tts播报 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" /> <!-- 用与导航状态中保持屏幕常亮 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- 允许写设备缓存，用于问题排查 -->
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" /> <!-- 允许读设备等信息，用于问题排查 -->
 
-<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-<uses-permission
-    android:name="android.permission.WRITE_MEDIA_STORAGE"
-    tools:ignore="ProtectedPermissions" />
-<uses-permission
-    android:name="android.permission.WRITE_SETTINGS"
-    tools:ignore="ProtectedPermissions" />
-<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-<uses-permission
-    android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
-    tools:ignore="ScopedStorage" />
-<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-<uses-permission android:name="android.permission.RECORD_AUDIO" />
-<uses-permission android:name="android.permission.CAMERA" />
-<uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_MEDIA_STORAGE"
+        tools:ignore="ProtectedPermissions" />
 
-<!--  Android 13版本适配，细化存储权限-->
-<uses-permission
-    android:name="android.permission.READ_MEDIA_IMAGES"
-    tools:ignore="SelectedPhotoAccess" />
-<uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
-<uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
-<uses-permission
-    android:name="android.permission.READ_EXTERNAL_STORAGE"
-    android:maxSdkVersion="32" />
-<uses-permission android:name="android.permission.RECORD_AUDIO" />
-<uses-permission android:name="android.permission.READ_CALENDAR" />
-<uses-permission android:name="android.permission.WRITE_CALENDAR" />
-<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-
-<application
-    android:name=".AppApplication"
-    android:allowBackup="true"
-    android:allowNativeHeapPointerTagging="false"
-    android:dataExtractionRules="@xml/data_extraction_rules"
-    android:fullBackupContent="@xml/backup_rules"
-    android:icon="@mipmap/ic_launcher"
-    android:label="@string/app_name"
-    android:roundIcon="@mipmap/ic_launcher_round"
-    android:supportsRtl="true"
-    android:theme="@style/Theme.LearnAndroidJava"
-    tools:targetApi="31">
-    <activity
-        android:name=".activity.lib.FrescoActivity"
-        android:exported="false" />
-    <activity
-        android:name=".activity.lib.RxJavaActivity"
-        android:exported="false" />
-    <activity
-        android:name=".activity.base.receiver.ReceiverActivity"
-        android:exported="false"
-        android:theme="@style/Theme.LearnAndroidJava" />
-    <activity
-        android:name=".MainActivity"
-        android:exported="true"
-        tools:ignore="WrongManifestParent">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity> <!-- 添加活动主入口 -->
-    <activity
-        android:name=".activity.base.service.ServiceActivity"
-        android:exported="false" />
-    <activity
-        android:name=".activity.lib.PermissionsActivity"
-        android:exported="false" />
-    <activity
-        android:name=".activity.lib.AMapActivity"
-        android:exported="false" />
-    <activity
-        android:name=".activity.base.event.ViewBindingActivity"
-        android:exported="false" />
-    <activity
-        android:name=".activity.lib.LibGlideActivity"
-        android:exported="false" />
-    <activity
-        android:name=".activity.lib.IjkplayerActivity"
-        android:exported="false" />
-    <activity
-        android:name=".activity.base.scroll.ViewPage2Activity"
-        android:exported="false" />
-    <activity
-        android:name=".activity.base.fragment.UseFragmentActivity"
-        android:exported="false" />
-    <activity android:name=".activity.base.event.BaseActivity" />
-    <activity android:name=".activity.base.api.NoticeActivity" />
-    <activity android:name=".activity.base.layout.RelativeLayoutActivity" />
-    <activity android:name=".activity.base.layout.FrameLayoutActivity" />
-    <activity android:name=".activity.base.layout.TableLayoutActivity" />
-    <activity android:name=".activity.base.layout.GridLayoutActivity" />
-    <activity android:name=".activity.base.scroll.ListViewActivity" />
-    <activity android:name=".activity.base.layout.ConstraintLayoutActivity" />
-    <activity android:name=".activity.base.scroll.RecyclerViewActivity" />
-    <activity android:name=".activity.base.anim.FrameByFrameActivity" />
-    <activity android:name=".activity.base.anim.TweenActivity" />
-    <activity android:name=".activity.base.anim.PropAnimActivity" />
-    <activity android:name=".activity.base.scroll.ViewPageActivity" />
-    <activity android:name=".activity.lib.OkHttpActivity" />
-
-    <meta-data
-        android:name="android.notch_support"
-        android:value="true" /> <!-- 沉浸导航栏 适配华为（huawei）刘海屏 -->
-    <meta-data
-        android:name="notch.config"
-        android:value="portrait|landscape" /> <!-- 沉浸导航栏 适配小米（xiaomi）刘海屏 -->
-    <service android:name=".shared.service.CustomService" /> <!-- 注册服务 -->
-    <meta-data
-        android:name="com.amap.api.v2.apikey"
-        android:value="04f07a130c4cd17934bfde4c448fa3a3" /> <!-- 静态注册广播接受者 -->
-    <receiver
-        android:name=".shared.receiver.StaticReceiver"
-        android:enabled="true"
-        android:exported="false"
-        android:permission="TODO"
-        tools:ignore="ExportedReceiver">
-        <intent-filter>
-            <action android:name="com.xx.__StaticReceiverFlag" />
-        </intent-filter>
-    </receiver>
+    <!--  Android 13版本适配，细化存储权限-->
+    <uses-permission
+        android:name="android.permission.READ_MEDIA_IMAGES"
+        tools:ignore="SelectedPhotoAccess" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
 
 
-</application>
-</manifest>=======
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-<application>
-    <activity
-        android:name="com.example.learnandroidjava.activity.base.api.SharePreferencesActivity"
-        android:exported="false"
+    <application
+        android:name=".AppApplication"
+        android:allowBackup="true"
+        android:allowNativeHeapPointerTagging="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.LearnAndroidJava"
+        tools:targetApi="31">
+        <activity
+            android:name=".activity.lib.FrescoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.lib.RxJavaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.base.receiver.ReceiverActivity"
+            android:exported="false"
+            android:theme="@style/Theme.LearnAndroidJava" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            tools:ignore="WrongManifestParent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        />
-</application>
-</manifest>>>>>>>> Added
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- 添加活动主入口 -->
+        <activity
+            android:name=".activity.base.service.ServiceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.lib.PermissionsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.lib.AMapActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.base.event.ViewBindingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.lib.LibGlideActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.lib.IjkplayerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.base.scroll.ViewPage2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.base.fragment.UseFragmentActivity"
+            android:exported="false" />
+        <activity android:name=".activity.base.event.BaseActivity" />
+        <activity android:name=".activity.base.api.NoticeActivity" />
+        <activity android:name=".activity.base.layout.RelativeLayoutActivity" />
+        <activity android:name=".activity.base.layout.FrameLayoutActivity" />
+        <activity android:name=".activity.base.layout.TableLayoutActivity" />
+        <activity android:name=".activity.base.layout.GridLayoutActivity" />
+        <activity android:name=".activity.base.scroll.ListViewActivity" />
+        <activity android:name=".activity.base.layout.ConstraintLayoutActivity" />
+        <activity android:name=".activity.base.scroll.RecyclerViewActivity" />
+        <activity android:name=".activity.base.anim.FrameByFrameActivity" />
+        <activity android:name=".activity.base.anim.TweenActivity" />
+        <activity android:name=".activity.base.anim.PropAnimActivity" />
+        <activity android:name=".activity.base.scroll.ViewPageActivity" />
+        <activity android:name=".activity.lib.OkHttpActivity" />
+        <activity android:name=".activity.base.api.SharePreferencesActivity" />
+
+        <meta-data
+            android:name="android.notch_support"
+            android:value="true" /> <!-- 沉浸导航栏 适配华为（huawei）刘海屏 -->
+        <meta-data
+            android:name="notch.config"
+            android:value="portrait|landscape" /> <!-- 沉浸导航栏 适配小米（xiaomi）刘海屏 -->
+        <service android:name=".shared.service.CustomService" /> <!-- 注册服务 -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="04f07a130c4cd17934bfde4c448fa3a3" /> <!-- 静态注册广播接受者 -->
+        <receiver
+            android:name=".shared.receiver.StaticReceiver"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="TODO"
+            tools:ignore="ExportedReceiver">
+            <intent-filter>
+                <action android:name="com.xx.__StaticReceiverFlag" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>
