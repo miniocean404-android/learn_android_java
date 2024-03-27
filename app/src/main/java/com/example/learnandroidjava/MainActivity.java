@@ -12,6 +12,7 @@ import android.widget.Button;
 import androidx.annotation.IdRes;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.learnandroidjava.activity.base.api.SharePreferencesActivity;
 import com.example.learnandroidjava.activity.base.event.BaseActivity;
 import com.example.learnandroidjava.activity.base.layout.ConstraintLayoutActivity;
 import com.example.learnandroidjava.activity.base.anim.FrameByFrameActivity;
@@ -80,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         jump(this,R.id.go_service_btn, ServiceActivity.class);
         jump(this,R.id.go_rx_java_btn, RxJavaActivity.class);
         jump(this,R.id.go_fresco_btn, FrescoActivity.class);
+        jump(this,R.id.go_sp_btn, SharePreferencesActivity.class);
     }
 
     @Override
