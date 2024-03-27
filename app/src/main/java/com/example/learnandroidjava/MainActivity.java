@@ -21,6 +21,7 @@ import com.example.learnandroidjava.activity.base.event.ViewBindingActivity;
 import com.example.learnandroidjava.activity.base.receiver.ReceiverActivity;
 import com.example.learnandroidjava.activity.base.service.ServiceActivity;
 import com.example.learnandroidjava.activity.lib.AMapActivity;
+import com.example.learnandroidjava.activity.lib.FrescoActivity;
 import com.example.learnandroidjava.activity.lib.IjkplayerActivity;
 import com.example.learnandroidjava.activity.base.scroll.ListViewActivity;
 import com.example.learnandroidjava.activity.lib.LibGlideActivity;
@@ -78,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
         jump(this,R.id.go_receiver_btn, ReceiverActivity.class);
         jump(this,R.id.go_service_btn, ServiceActivity.class);
         jump(this,R.id.go_rx_java_btn, RxJavaActivity.class);
+        jump(this,R.id.go_fresco_btn, FrescoActivity.class);
     }
 
     @Override

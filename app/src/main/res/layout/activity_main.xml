@@ -207,4 +207,15 @@
         android:textSize="10dp"
         android:background="@drawable/button_radius"
         />
+
+    <Button
+        android:text="Fresco 图片优化"
+        android:id="@+id/go_fresco_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textSize="10dp"
+        android:background="@drawable/button_radius"
+        />
 </GridLayout>

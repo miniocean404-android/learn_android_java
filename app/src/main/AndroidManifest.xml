@@ -44,6 +44,9 @@
         android:theme="@style/Theme.LearnAndroidJava"
         tools:targetApi="31">
         <activity
+            android:name=".activity.lib.FrescoActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.lib.RxJavaActivity"
             android:exported="false" />
         <activity
@@ -108,7 +111,7 @@
         <service android:name=".shared.service.CustomService" /> <!-- 注册服务 -->
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="04f07a130c4cd17934bfde4c448fa3a3"></meta-data> <!-- 静态注册广播接受者 -->
+            android:value="04f07a130c4cd17934bfde4c448fa3a3" /> <!-- 静态注册广播接受者 -->
         <receiver
             android:name=".shared.receiver.StaticReceiver"
             android:enabled="true"
