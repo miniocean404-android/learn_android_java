@@ -192,5 +192,12 @@ dependencies {
     implementation(libs.io.reactivex.rxjava3.rxandroid)
     implementation(libs.reactivex.rxjava)
     implementation(libs.rxjava3.rxkotlin)
+
+    // 图片选择器
+    implementation("io.github.lucksiege:pictureselector:v3.11.2")
+    implementation("io.github.lucksiege:compress:v3.11.2")
+    implementation("io.github.lucksiege:ucrop:v3.11.2")
+    implementation("io.github.lucksiege:camerax:v3.11.2")
+
 }
 
