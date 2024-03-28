@@ -7,4 +7,37 @@
     tools:context=".activity.base.db.RoomActivity"
     android:orientation="vertical">
 
+
+    <Button
+        android:id="@+id/btn_query_db"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="查询" />
+
+
+    <Button
+        android:id="@+id/btn_insert_db"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="插入" />
+
+
+
+    <Button
+        android:id="@+id/btn_update_db"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="更新" />
+
+    <Button
+        android:id="@+id/btn_delete_db"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="删除" />
+
+    <Button
+        android:id="@+id/btn_delete_all_db"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="删除所有" />
 </LinearLayout>

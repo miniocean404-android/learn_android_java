@@ -8,7 +8,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     // 对应 gradle 配置： apply plugin: 'xxx'
-    // id("com.google.devtools.ksp") version "1.9.21-1.0.15"
+    id("com.google.devtools.ksp") version "1.9.21-1.0.15"
 }
 
 val keystorePropFile = rootProject.file("app/key.properties")
@@ -194,10 +194,13 @@ dependencies {
     implementation(libs.rxjava3.rxkotlin)
 
     // 图片选择器
-    implementation("io.github.lucksiege:pictureselector:v3.11.2")
-    implementation("io.github.lucksiege:compress:v3.11.2")
-    implementation("io.github.lucksiege:ucrop:v3.11.2")
-    implementation("io.github.lucksiege:camerax:v3.11.2")
+    implementation(libs.pictureselector)
+    implementation(libs.compress)
+    implementation(libs.ucrop)
+    implementation(libs.github.camerax)
 
+    // room
+    implementation(libs.androidx.room.room.runtime)
+    ksp(libs.androidx.room.compiler)
 }
 

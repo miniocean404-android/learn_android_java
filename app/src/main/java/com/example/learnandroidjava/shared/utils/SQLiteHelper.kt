@@ -16,7 +16,7 @@ class SQLiteHelper(
         @Synchronized
         fun getInstant(context: Context?): SQLiteOpenHelper? {
             if (instant == null) {
-                instant =  SQLiteHelper(context, "mini_ocean.db", null, 1)
+                instant =  SQLiteHelper(context, "mini_ocean.db", null, 3)
             }
             return instant
         }
