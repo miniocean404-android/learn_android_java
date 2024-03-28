@@ -16,6 +16,7 @@ import com.example.learnandroidjava.activity.base.api.SharePreferencesActivity;
 import com.example.learnandroidjava.activity.base.db.RoomActivity;
 import com.example.learnandroidjava.activity.base.db.SQLiteActivity;
 import com.example.learnandroidjava.activity.base.event.BaseActivity;
+import com.example.learnandroidjava.activity.base.intent.IntentParamsActivity;
 import com.example.learnandroidjava.activity.base.layout.ConstraintLayoutActivity;
 import com.example.learnandroidjava.activity.base.anim.FrameByFrameActivity;
 import com.example.learnandroidjava.activity.base.layout.FrameLayoutActivity;
@@ -85,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
         jump(this,R.id.go_fresco_btn, FrescoActivity.class);
         jump(this,R.id.go_sqlite_btn, SQLiteActivity.class);
         jump(this,R.id.go_root_btn, RoomActivity.class);
+        jump(this,R.id.go_intent_params_btn, IntentParamsActivity.class);
     }
 
     @Override

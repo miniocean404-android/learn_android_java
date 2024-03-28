@@ -60,6 +60,12 @@
         android:theme="@style/Theme.LearnAndroidJava"
         tools:targetApi="31">
         <activity
+            android:name=".activity.base.intent.IntentReceiveParamsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.base.intent.IntentParamsActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.base.db.RoomActivity"
             android:exported="false" />
         <activity
