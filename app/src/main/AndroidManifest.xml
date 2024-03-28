@@ -37,6 +37,7 @@
         tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.VIBRATE" /> <!-- Android 13版本适配，细化存储权限 -->
     <uses-permission
         android:name="android.permission.READ_MEDIA_IMAGES"
@@ -59,6 +60,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnAndroidJava"
         tools:targetApi="31">
+        <activity
+            android:name=".activity.base.media.SoundPoolActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.base.media.VideoViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.base.media.MediaPlayerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.base.media.RecordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.base.media.MediaRecorderActivity"
+            android:exported="false" />
         <activity
             android:name=".activity.base.intent.IntentReceiveParamsActivity"
             android:exported="false" />
@@ -84,6 +100,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
+            android:theme="@style/Theme.Splash"
             tools:ignore="WrongManifestParent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

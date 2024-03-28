@@ -22,6 +22,9 @@ class IntentParamsActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(binding.root)
 
         binding.base.setOnClickListener(this)
+        binding.bundle.setOnClickListener(this)
+        binding.serializable.setOnClickListener(this)
+        binding.parcelable.setOnClickListener(this)
     }
 
     override fun onClick(view: View?) {

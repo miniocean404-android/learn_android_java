@@ -20,4 +20,13 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
+
+    <!--  启动屏 splash  -->
+    <style name="Theme.Splash" parent="Theme.LearnAndroidJava">
+        <item name="android:windowBackground">@drawable/splash</item>
+        <!--    启动页全屏    -->
+        <item name="android:windowFullscreen">true</item>
+        <!--    导航条透明   -->
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
 </resources>

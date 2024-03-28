@@ -18,7 +18,7 @@ class IntentReceiveParamsActivity : AppCompatActivity() {
 
         // 基础类型传参
         val name = intent.getStringExtra("name")
-        val age = intent.getStringExtra("age")
+        val age = intent.getIntExtra("age",0)
 
         Toaster.show("Name: $name, Age: $age")
 
@@ -29,8 +29,8 @@ class IntentReceiveParamsActivity : AppCompatActivity() {
 
 
         // serializable 传参
-        val test = intent.getSerializableExtra("serializable_test") as SerializableTest
-        Toaster.show("Name1: ${test.name}, Age1: ${test.age}")
+        val test = intent.getSerializableExtra("serializable_test") as? SerializableTest
+        Toaster.show("Name1: ${test?.name}, Age1: ${test?.age}")
 
         // parcelable 传参
         val parcelableTest = intent.getParcelableExtra("parcelable_test") as? ParcelableTest
