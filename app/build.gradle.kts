@@ -11,6 +11,7 @@ plugins {
     id("com.google.devtools.ksp") version "1.9.21-1.0.15"
 }
 
+
 val keystorePropFile = rootProject.file("app/key.properties")
 val keystoreProps = Properties().apply {
     load(keystorePropFile.inputStream())
