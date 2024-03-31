@@ -3,7 +3,6 @@ package com.example.learnandroidjava;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.Service;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,7 +11,6 @@ import android.widget.Button;
 import androidx.annotation.IdRes;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.learnandroidjava.activity.base.api.SharePreferencesActivity;
 import com.example.learnandroidjava.activity.base.db.RoomActivity;
 import com.example.learnandroidjava.activity.base.db.SQLiteActivity;
 import com.example.learnandroidjava.activity.base.event.BaseActivity;
@@ -25,7 +23,7 @@ import com.example.learnandroidjava.activity.base.event.ViewBindingActivity;
 import com.example.learnandroidjava.activity.base.media.MediaRecorderActivity;
 import com.example.learnandroidjava.activity.base.receiver.ReceiverActivity;
 import com.example.learnandroidjava.activity.base.service.ServiceActivity;
-import com.example.learnandroidjava.activity.compose.ComposeBaseActivity;
+import com.example.learnandroidjava.activity.compose.ComposeAppActivity;
 import com.example.learnandroidjava.activity.lib.AMapActivity;
 import com.example.learnandroidjava.activity.lib.FrescoActivity;
 import com.example.learnandroidjava.activity.lib.IjkplayerActivity;
@@ -43,10 +41,6 @@ import com.example.learnandroidjava.activity.base.scroll.ViewPageActivity;
 import com.example.learnandroidjava.activity.lib.PermissionsActivity;
 import com.example.learnandroidjava.activity.lib.RxJavaActivity;
 import com.gyf.immersionbar.ImmersionBar;
-import com.hjq.toast.Toaster;
-import com.simple.spiderman.SpiderMan;
-
-import xcrash.XCrash;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -93,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         jump(this, R.id.go_root_btn, RoomActivity.class);
         jump(this, R.id.go_intent_params_btn, IntentParamsActivity.class);
         jump(this, R.id.go_media_recorder_btn, MediaRecorderActivity.class);
-        jump(this, R.id.go_compose_btn, ComposeBaseActivity.class);
+        jump(this, R.id.go_compose_btn, ComposeAppActivity.class);
     }
 
     @Override

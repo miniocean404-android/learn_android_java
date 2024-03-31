@@ -1,8 +1,5 @@
-package com.example.learnandroidjava.activity.compose
+package com.example.learnandroidjava.component
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.Image
@@ -36,33 +33,6 @@ import androidx.compose.ui.unit.dp
 import com.example.learnandroidjava.R
 import mini.ocean.tool.ui.theme.ToolTheme
 
-class ComposeBaseActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            ToolTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Conversation(
-                        listOf(
-                            MessageData("Alice", "Hi"),
-                            MessageData(
-                                "Bob",
-                                "Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello" +
-                                        "Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello"
-                            ),
-                            MessageData("Bob", "Hello"),
-                            MessageData("Bob", "Hello"),
-                            MessageData("Bob", "Hello"),
-                        )
-                    )
-                }
-            }
-        }
-    }
-}
 
 @Composable
 fun MessageCard(
@@ -152,4 +122,3 @@ fun LayoutActivityPreview() {
         }
     }
 }
-

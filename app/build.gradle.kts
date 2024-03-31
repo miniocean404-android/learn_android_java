@@ -141,6 +141,9 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    // Jetpack Compose 网络图片加载 与 ok http 版本冲突 暂时注释
+//    implementation(libs.coil.kt.coil.compose)
+
 
     // 添加 recycler_view 依赖
     implementation(libs.androidx.recyclerview)

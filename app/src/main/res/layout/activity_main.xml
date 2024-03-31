@@ -278,7 +278,7 @@
 
 
     <Button
-        android:text="Compose"
+        android:text="新布局方式 Compose"
         android:id="@+id/go_compose_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
