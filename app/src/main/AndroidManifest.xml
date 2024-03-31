@@ -148,6 +148,13 @@
         <activity android:name=".activity.lib.OkHttpActivity" />
         <activity android:name=".activity.base.api.SharePreferencesActivity" />
 
+
+        <activity
+            android:name=".activity.compose.ComposeBaseActivity"
+            android:exported="false"
+            android:label="@string/title_activity_layout"
+            android:theme="@style/Theme.Tool" />
+
         <meta-data
             android:name="android.notch_support"
             android:value="true" /> <!-- 沉浸导航栏 适配华为（huawei）刘海屏 -->

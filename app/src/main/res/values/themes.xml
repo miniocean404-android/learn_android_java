@@ -29,4 +29,6 @@
         <!--    导航条透明   -->
         <item name="android:navigationBarColor">@android:color/transparent</item>
     </style>
+
+    <style name="Theme.Tool" parent="android:Theme.Material.Light.NoActionBar" />
 </resources>

@@ -25,6 +25,7 @@ import com.example.learnandroidjava.activity.base.event.ViewBindingActivity;
 import com.example.learnandroidjava.activity.base.media.MediaRecorderActivity;
 import com.example.learnandroidjava.activity.base.receiver.ReceiverActivity;
 import com.example.learnandroidjava.activity.base.service.ServiceActivity;
+import com.example.learnandroidjava.activity.compose.ComposeBaseActivity;
 import com.example.learnandroidjava.activity.lib.AMapActivity;
 import com.example.learnandroidjava.activity.lib.FrescoActivity;
 import com.example.learnandroidjava.activity.lib.IjkplayerActivity;
@@ -92,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         jump(this, R.id.go_root_btn, RoomActivity.class);
         jump(this, R.id.go_intent_params_btn, IntentParamsActivity.class);
         jump(this, R.id.go_media_recorder_btn, MediaRecorderActivity.class);
+        jump(this, R.id.go_compose_btn, ComposeBaseActivity.class);
     }
 
     @Override
