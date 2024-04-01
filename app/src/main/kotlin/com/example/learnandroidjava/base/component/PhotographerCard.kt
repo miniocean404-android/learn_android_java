@@ -22,7 +22,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.learnandroidjava.R
-import mini.ocean.tool.ui.theme.ToolTheme
+import com.example.learnandroidjava.theme.ToolTheme
 
 @Composable
 fun PhotographerCard(modifier: Modifier = Modifier) {

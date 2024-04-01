@@ -145,7 +145,10 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     // Jetpack Compose 网络图片加载 与 ok http 版本冲突 暂时注释
-//    implementation(libs.coil.kt.coil.compose)
+    // implementation(libs.coil.kt.coil.compose)
+
+    // Jetpack Compose 状态栏导航栏控制
+    implementation("com.google.accompanist:accompanist-systemuicontroller:0.35.0-alpha")
 
 
     // 添加 recycler_view 依赖

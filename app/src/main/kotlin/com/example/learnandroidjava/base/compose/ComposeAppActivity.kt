@@ -7,10 +7,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.example.learnandroidjava.base.component.LazyListLayout
-import com.example.learnandroidjava.base.component.ListLayout
 import com.example.learnandroidjava.base.component.ScrollLayout
-import mini.ocean.tool.ui.theme.ToolTheme
+import com.example.learnandroidjava.theme.ToolTheme
 
 class ComposeAppActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

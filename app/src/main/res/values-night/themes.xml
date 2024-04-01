@@ -13,11 +13,8 @@
 
         <!-- 状态栏 -->
         <!-- 设置状态栏文字色, true为深色, false为白色 -->
-        <item name="android:statusBarColor">@android:color/transparent</item>
-    </style>
-    <!-- Base application theme. -->
-    <style name="Base.Theme.LearnAndroidJava" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+<!--        <item name="android:statusBarColor">@android:color/transparent</item>-->
+        <!-- 透明状态栏 -->
+<!--        <item name="android:windowTranslucentStatus">true</item>-->
     </style>
 </resources>
