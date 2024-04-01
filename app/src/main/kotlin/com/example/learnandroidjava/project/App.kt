@@ -1,4 +1,4 @@
-package com.example.learnandroidjava.activity.compose
+package com.example.learnandroidjava.project
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -9,9 +9,10 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.learnandroidjava.project.page.HomePage
 import mini.ocean.tool.ui.theme.ToolTheme
 
-class Template: ComponentActivity() {
+class App : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -21,21 +22,9 @@ class Template: ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
+                    HomePage()
                 }
             }
-        }
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun TemplateClassPreview(){
-    ToolTheme {
-        // A surface container using the 'background' color from the theme
-        Surface(
-            modifier = Modifier.fillMaxSize(),
-            color = MaterialTheme.colorScheme.background
-        ) {
         }
     }
 }

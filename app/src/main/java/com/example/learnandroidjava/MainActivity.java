@@ -23,7 +23,6 @@ import com.example.learnandroidjava.activity.base.event.ViewBindingActivity;
 import com.example.learnandroidjava.activity.base.media.MediaRecorderActivity;
 import com.example.learnandroidjava.activity.base.receiver.ReceiverActivity;
 import com.example.learnandroidjava.activity.base.service.ServiceActivity;
-import com.example.learnandroidjava.activity.compose.ComposeAppActivity;
 import com.example.learnandroidjava.activity.lib.AMapActivity;
 import com.example.learnandroidjava.activity.lib.FrescoActivity;
 import com.example.learnandroidjava.activity.lib.IjkplayerActivity;
@@ -40,6 +39,8 @@ import com.example.learnandroidjava.activity.base.scroll.ViewPage2Activity;
 import com.example.learnandroidjava.activity.base.scroll.ViewPageActivity;
 import com.example.learnandroidjava.activity.lib.PermissionsActivity;
 import com.example.learnandroidjava.activity.lib.RxJavaActivity;
+import com.example.learnandroidjava.base.compose.ComposeAppActivity;
+import com.example.learnandroidjava.project.App;
 import com.gyf.immersionbar.ImmersionBar;
 
 
@@ -88,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
         jump(this, R.id.go_intent_params_btn, IntentParamsActivity.class);
         jump(this, R.id.go_media_recorder_btn, MediaRecorderActivity.class);
         jump(this, R.id.go_compose_btn, ComposeAppActivity.class);
+        jump(this, R.id.go_compose_project_btn, App.class);
     }
 
     @Override

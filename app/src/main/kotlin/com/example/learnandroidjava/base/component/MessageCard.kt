@@ -1,4 +1,4 @@
-package com.example.learnandroidjava.component
+package com.example.learnandroidjava.base.component
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.animateContentSize

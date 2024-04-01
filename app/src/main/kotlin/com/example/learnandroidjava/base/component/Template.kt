@@ -1,4 +1,4 @@
-package com.example.learnandroidjava.component
+package com.example.learnandroidjava.base.component
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme

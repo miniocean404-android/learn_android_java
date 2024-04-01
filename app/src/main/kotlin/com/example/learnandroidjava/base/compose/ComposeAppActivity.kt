@@ -1,4 +1,4 @@
-package com.example.learnandroidjava.activity.compose
+package com.example.learnandroidjava.base.compose
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -7,9 +7,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.example.learnandroidjava.component.LazyListLayout
-import com.example.learnandroidjava.component.ListLayout
-import com.example.learnandroidjava.component.ScrollLayout
+import com.example.learnandroidjava.base.component.LazyListLayout
+import com.example.learnandroidjava.base.component.ListLayout
+import com.example.learnandroidjava.base.component.ScrollLayout
 import mini.ocean.tool.ui.theme.ToolTheme
 
 class ComposeAppActivity : ComponentActivity() {

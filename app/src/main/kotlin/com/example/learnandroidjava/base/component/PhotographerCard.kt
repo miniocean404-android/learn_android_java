@@ -1,4 +1,4 @@
-package com.example.learnandroidjava.component
+package com.example.learnandroidjava.base.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
