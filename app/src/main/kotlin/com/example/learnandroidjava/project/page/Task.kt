@@ -24,8 +24,8 @@ import com.example.learnandroidjava.project.component.CustomTopAppBar
 import com.example.learnandroidjava.project.modal.entity.NavigationItem
 
 @Composable
-fun TaskPage(statusBarHeight: Int) {
-    CustomTopAppBar(statusBarHeight) {
+fun TaskPage() {
+    CustomTopAppBar() {
         Text(text = "任务")
     }
     Text(text = "Task")

@@ -10,8 +10,8 @@ import com.example.learnandroidjava.project.component.CustomTopAppBar
 
 
 @Composable
-fun MinePage(statusBarHeight: Int) {
-    CustomTopAppBar(statusBarHeight) {
+fun MinePage() {
+    CustomTopAppBar() {
         Text(text = "我的")
     }
     Text(text = "我得")

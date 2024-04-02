@@ -23,13 +23,13 @@ import com.example.learnandroidjava.project.modal.entity.NavigationItem
 
 
 @Composable
-fun HomePage(statusBarHeight: Int) {
-    BottomBar(statusBarHeight)
+fun HomePage() {
+    BottomBar()
 }
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun BottomBar(statusBarHeight: Int) {
+fun BottomBar() {
     val bottomItems = listOf(
         NavigationItem("学习", Icons.Filled.Home),
         NavigationItem("任务", Icons.Filled.DateRange),
@@ -65,9 +65,9 @@ fun BottomBar(statusBarHeight: Int) {
             }
         }) {
         when (bottomIndex) {
-            0 -> LearnPage(statusBarHeight)
-            1 -> TaskPage(statusBarHeight)
-            2 -> MinePage(statusBarHeight)
+            0 -> LearnPage()
+            1 -> TaskPage()
+            2 -> MinePage()
         }
     }
 }
@@ -76,5 +76,5 @@ fun BottomBar(statusBarHeight: Int) {
 @Preview(showBackground = true)
 @Composable
 fun HomePagePreview() {
-    BottomBar(30)
+    BottomBar()
 }

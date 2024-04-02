@@ -3,10 +3,13 @@ package com.example.learnandroidjava.project.component
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.RowScope
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBars
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -21,10 +24,14 @@ import androidx.compose.ui.unit.dp
 import com.example.learnandroidjava.theme.ToolTheme
 
 @Composable
-fun CustomTopAppBar(statusBarHeight: Int, content: @Composable () -> Unit) {
-    // 将状态栏高度转为 dp
-    val statusBarHeightDp = with(LocalDensity.current){
-        statusBarHeight.toDp()
+fun CustomTopAppBar(
+    modifier: Modifier = Modifier,
+    horizontalArrangement: Arrangement.Horizontal = Arrangement.Center,
+    verticalAlignment: Alignment.Vertical = Alignment.CenterVertically,
+    content: @Composable RowScope.() -> Unit
+) {
+    val statusBarHeightDp = LocalDensity.current.run {
+        WindowInsets.statusBars.getTop(this).toDp()
     }
 
     val APP_BAR_HEIGHT = 56.dp
@@ -33,15 +40,17 @@ fun CustomTopAppBar(statusBarHeight: Int, content: @Composable () -> Unit) {
         modifier = Modifier
             .background(
                 Brush.linearGradient(
-                    listOf(MaterialTheme.colorScheme.primary, MaterialTheme.colorScheme.onPrimary)
+                    listOf(MaterialTheme.colorScheme.primary, MaterialTheme.colorScheme.secondary)
                 )
             )
             .fillMaxWidth()
             .height(APP_BAR_HEIGHT + statusBarHeightDp)
-            .padding(top = statusBarHeightDp),
+            .padding(top = statusBarHeightDp)
+            // 合并两个 modifier
+            .then(modifier),
         // 内容对其方式
-        horizontalArrangement = Arrangement.Center,
-        verticalAlignment = Alignment.CenterVertically
+        horizontalArrangement = horizontalArrangement,
+        verticalAlignment = verticalAlignment
     ) {
         content()
     }

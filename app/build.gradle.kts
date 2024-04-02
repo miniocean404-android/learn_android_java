@@ -147,8 +147,12 @@ dependencies {
     // Jetpack Compose 网络图片加载 与 ok http 版本冲突 暂时注释
     // implementation(libs.coil.kt.coil.compose)
 
+    // Jetpack Compose ViewModel
+    implementation(libs.androidx.lifecycle.lifecycle.viewmodel.ktx2)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+
     // Jetpack Compose 状态栏导航栏控制
-    implementation("com.google.accompanist:accompanist-systemuicontroller:0.35.0-alpha")
+    implementation(libs.accompanist.systemuicontroller)
 
 
     // 添加 recycler_view 依赖
