@@ -117,7 +117,7 @@ fun <T> Swiper(vm: T) where T : ViewModel, T : SwiperViewModel {
             state = state,
             modifier = Modifier
                 .align(Alignment.BottomCenter)
-                .padding(bottom = 8.dp)
+                .padding(bottom = 5.dp)
         )
     }
 }
@@ -137,12 +137,12 @@ fun DotIndicators(
                 ) else Color.White
             Box(
                 modifier = Modifier
-                    .width(8.dp)
-                    .height(8.dp)
+                    .width(5.dp)
+                    .height(5.dp)
                     .clip(CircleShape)
                     .background(color)
             )
-            Spacer(modifier = Modifier.width(3.dp))
+            Spacer(modifier = Modifier.width(5.dp))
         }
     }
 }
