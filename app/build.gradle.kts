@@ -143,9 +143,12 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    // compose 图标扩展依赖
+    implementation(libs.androidx.material.icons.extended)
 
-    // Jetpack Compose 网络图片加载 与 ok http 版本冲突 暂时注释
-    // implementation(libs.coil.kt.coil.compose)
+
+    // Jetpack Compose 网络图片加载
+    implementation(libs.coil.kt.coil.compose)
 
     // Jetpack Compose ViewModel
     implementation(libs.androidx.lifecycle.lifecycle.viewmodel.ktx2)

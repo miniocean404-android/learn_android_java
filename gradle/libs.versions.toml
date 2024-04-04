@@ -4,6 +4,7 @@ adapterRxjava3 = "2.9.0"
 agp = "8.3.1"
 androidGifDrawable = "1.2.28"
 androidxLifecycleViewmodelKtxVersion = "2.7.0"
+androidxMaterialIconsExtended = "1.7.0"
 animatedGif = "3.1.3"
 banner = "2.2.3"
 coilComposeVersion = "2.6.0"
@@ -21,6 +22,7 @@ junitVersion = "1.1.5"
 espressoCore = "3.5.1"
 appcompat = "1.6.1"
 material = "1.10.0"
+materialIconsExtended = "1.5.1"
 mmkv = "1.2.10"
 pictureselector = "v3.11.2"
 reactivexRxjava = "3.1.8"
@@ -32,7 +34,7 @@ roomCompiler = "2.6.1"
 rxkotlinVersion = "3.0.1"
 spidermanVersion = "v1.1.9"
 legacySupportV4 = "1.0.0"
-squareupRetrofitVersion = "2.10.0"
+squareupRetrofitVersion = "2.11.0"
 supportCoreUtils = "24.2.1"
 toaster = "12.6"
 tvIjkplayerArmv7a = "0.8.8"
@@ -53,6 +55,7 @@ android-gif-drawable = { module = "pl.droidsonroids.gif:android-gif-drawable", v
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-lifecycle-lifecycle-viewmodel-ktx2 = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidxLifecycleViewmodelKtxVersion" }
 androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "androidxLifecycleViewmodelKtxVersion" }
+androidx-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "materialIconsExtended" }
 androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomCompiler" }
 androidx-room-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomCompiler" }

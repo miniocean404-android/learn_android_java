@@ -1,9 +1,6 @@
 package com.example.learnandroidjava.activity.lib
 
 import android.annotation.SuppressLint
-import android.graphics.Bitmap
-import android.graphics.Color
-import android.graphics.Paint
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -11,25 +8,25 @@ import com.example.learnandroidjava.R
 import com.example.learnandroidjava.shared.api.HttpBinApi
 import com.example.learnandroidjava.shared.bean.RxJavaResponse
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
-import io.reactivex.rxjava3.core.Flowable
 import io.reactivex.rxjava3.functions.Consumer
 import io.reactivex.rxjava3.functions.Function
 import io.reactivex.rxjava3.schedulers.Schedulers
 import okhttp3.Cache
 import okhttp3.Callback
+import okhttp3.Cookie
 import okhttp3.CookieJar
 import okhttp3.FormBody
-import okhttp3.MediaType
+import okhttp3.HttpUrl
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import okhttp3.RequestBody
+import okhttp3.RequestBody.Companion.asRequestBody
 import org.reactivestreams.Publisher
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.File
 import java.io.FileOutputStream
-import java.io.FilterOutputStream
 import kotlin.concurrent.thread
 
 class OkHttpActivity : AppCompatActivity() {
@@ -46,15 +43,12 @@ class OkHttpActivity : AppCompatActivity() {
         client.cache(Cache(cacheDir, 10 * 1024 * 1024))
 
         client.cookieJar(object : CookieJar {
-            override fun loadForRequest(url: okhttp3.HttpUrl): MutableList<okhttp3.Cookie> {
+            override fun loadForRequest(url: HttpUrl): MutableList<okhttp3.Cookie> {
                 // 获取指定网址的 Cookie 列表
                 return cookieCache[url.toString()] ?: mutableListOf()
             }
 
-            override fun saveFromResponse(
-                url: okhttp3.HttpUrl,
-                cookies: MutableList<okhttp3.Cookie>
-            ) {
+            override fun saveFromResponse(url: HttpUrl, cookies: List<Cookie>) {
                 // 将指定网址的 Cookie 存入缓存
                 cookieCache[url.toString()] = cookies.toMutableList()
             }
@@ -97,11 +91,9 @@ class OkHttpActivity : AppCompatActivity() {
                 return cookieCache[url.toString()] ?: mutableListOf()
             }
 
-            override fun saveFromResponse(
-                url: okhttp3.HttpUrl,
-                cookies: MutableList<okhttp3.Cookie>
-            ) {
+            override fun saveFromResponse(url: HttpUrl, cookies: List<Cookie>) {
                 cookieCache[url.toString()] = cookies.toMutableList()
+
             }
         }).build())
 
@@ -126,7 +118,7 @@ class OkHttpActivity : AppCompatActivity() {
         val t = thread {
             val request = Request.Builder().url("$url/get?a=1&b=2").build()
             val response = client.newCall(request).execute()
-            val bodyStr = response.body()?.string()
+            val bodyStr = response.body?.string()
 
             Log.i(tag, "OkHttpActivity getSync: $bodyStr 111111111111111111")
         }
@@ -144,7 +136,7 @@ class OkHttpActivity : AppCompatActivity() {
 
             override fun onResponse(call: okhttp3.Call, response: okhttp3.Response) {
                 if (response.isSuccessful) {
-                    val bodyStr = response.body()?.string()
+                    val bodyStr = response.body?.string()
 
                     Log.i(tag, "OkHttpActivity getASync onResponse: $bodyStr")
                 }
@@ -157,7 +149,7 @@ class OkHttpActivity : AppCompatActivity() {
             val formBody = FormBody.Builder().add("a", "1").add("b", "2").build()
             val request = Request.Builder().url("$url/post?a=1&b=2").post(formBody).build()
             val response = client.newCall(request).execute()
-            val body = response.body()?.string()
+            val body = response.body?.string()
 
             Log.i(tag, "OkHttpActivity postSync: $body ")
         }
@@ -207,7 +199,7 @@ class OkHttpActivity : AppCompatActivity() {
         val part = MultipartBody.Part.createFormData(
             "file",
             file.name,
-            RequestBody.create(MediaType.parse("text/plain"), file)
+            file.asRequestBody("text/plain".toMediaTypeOrNull())
         )
 
         val call = httpBinApi.upload(part)

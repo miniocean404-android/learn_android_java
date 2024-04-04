@@ -2,12 +2,12 @@ package com.example.learnandroidjava.project.page
 
 
 import android.annotation.SuppressLint
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -16,6 +16,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Icon
+import androidx.compose.material3.LeadingIconTab
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Tab
@@ -31,8 +32,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.learnandroidjava.project.component.CustomTopAppBar
-import com.example.learnandroidjava.project.viewmodel.HomeViewModel
+import com.example.learnandroidjava.project.component.custom_app_bar.CustomTopAppBar
+import com.example.learnandroidjava.project.component.swiper.Swiper
+import com.example.learnandroidjava.project.vm.HomeViewModel
 
 
 @Composable
@@ -41,6 +43,7 @@ fun LearnPage() {
 
 }
 
+@OptIn(ExperimentalFoundationApi::class)
 @SuppressLint("InvalidColorHexValue")
 @Composable
 fun Home(vm: HomeViewModel = viewModel()) {
@@ -67,14 +70,14 @@ fun Home(vm: HomeViewModel = viewModel()) {
         }
 
         TabRow(
-            selectedTabIndex = vm.index,
+            selectedTabIndex = vm.categoryIndex,
             containerColor = MaterialTheme.colorScheme.secondary,
         ) {
             vm.categories.forEachIndexed() { index, category ->
                 Tab(
-                    selected = vm.index == index,
+                    selected = vm.categoryIndex == index,
                     onClick = {
-                        vm.index = index
+                        vm.categoryIndex = index
                     },
                     selectedContentColor = Color.White,
                     unselectedContentColor = Color.White.copy(alpha = 0.5f),
@@ -87,8 +90,48 @@ fun Home(vm: HomeViewModel = viewModel()) {
                 }
             }
         }
+
+        TabRow(
+            selectedTabIndex = vm.typeIndex,
+            containerColor = MaterialTheme.colorScheme.secondary,
+            // 隐藏指示器
+            indicator = {},
+            // 隐藏分割线
+            divider = {},
+        ) {
+            vm.types.forEachIndexed() { index, dataType ->
+                LeadingIconTab(
+                    selected = vm.typeIndex == index,
+                    onClick = {
+                        vm.typeIndex = index
+                    },
+                    selectedContentColor = MaterialTheme.colorScheme.primary,
+                    unselectedContentColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.5f),
+                    modifier = Modifier.background(Color.White),
+                    icon = {
+                        Icon(
+                            imageVector = dataType.icon,
+                            contentDescription = null,
+                            // 设置图标颜色
+                            // tint = MaterialTheme.colorScheme.primary,
+                            modifier = Modifier.size(16.dp)
+                        )
+                    },
+                    text = {
+                        Text(
+                            text = dataType.title,
+                            modifier = Modifier.padding(vertical = 8.dp),
+                            fontSize = 14.sp,
+                        )
+                    }
+                )
+            }
+        }
+
+        Swiper(vm)
     }
 }
+
 
 @Composable
 fun SearchBar(modifier: Modifier = Modifier) {
