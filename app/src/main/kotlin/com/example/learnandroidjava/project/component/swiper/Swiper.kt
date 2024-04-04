@@ -132,9 +132,9 @@ fun DotIndicators(
     Row(modifier = modifier) {
         repeat(totalCount) { iteration ->
             val color =
-                if (state.currentPage % totalCount == iteration) Color.White.copy(
+                if (state.currentPage % totalCount == iteration) Color.White else Color.White.copy(
                     alpha = 0.3f
-                ) else Color.White
+                )
             Box(
                 modifier = Modifier
                     .width(5.dp)
