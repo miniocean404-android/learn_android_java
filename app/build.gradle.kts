@@ -89,7 +89,6 @@ android {
     }
 
 
-    // Compose 版本
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
     }
@@ -145,7 +144,8 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     // compose 图标扩展依赖
     implementation(libs.androidx.material.icons.extended)
-
+    // compose 导航
+    implementation(libs.androidx.navigation.navigation.compose)
 
     // Jetpack Compose 网络图片加载
     implementation(libs.coil.kt.coil.compose)
@@ -154,8 +154,8 @@ dependencies {
     implementation(libs.androidx.lifecycle.lifecycle.viewmodel.ktx2)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
 
-    // Jetpack Compose 状态栏导航栏控制
-    implementation(libs.accompanist.systemuicontroller)
+    // Compose 约束布局
+    implementation(libs.androidx.constraintlayout.compose)
 
 
     // 添加 recycler_view 依赖

@@ -1,4 +1,4 @@
-package com.example.learnandroidjava.project.component.custom_app_bar
+package com.example.learnandroidjava.project.component.common.custom_app_bar
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -9,7 +9,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBars
+import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.layout.windowInsetsPadding
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -18,6 +23,7 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CustomTopAppBar(
     modifier: Modifier = Modifier,
@@ -38,9 +44,10 @@ fun CustomTopAppBar(
                     listOf(MaterialTheme.colorScheme.primary, MaterialTheme.colorScheme.secondary)
                 )
             )
+            // 解决小窗模式下状态栏消失的问题
+            .windowInsetsPadding(TopAppBarDefaults.windowInsets)
             .fillMaxWidth()
-            .height(APP_BAR_HEIGHT + statusBarHeightDp)
-            .padding(top = statusBarHeightDp)
+            .height(APP_BAR_HEIGHT)
             // 合并两个 modifier
             .then(modifier),
         // 内容对其方式
