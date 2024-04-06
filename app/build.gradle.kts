@@ -67,6 +67,7 @@ android {
         release {
             signingConfig = signingConfigs.getByName("release")
 
+            // 开启了 isMinifyEnabled 一定要配置混淆规则，如果不配置会导致找不到库对应的类文件
             isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),

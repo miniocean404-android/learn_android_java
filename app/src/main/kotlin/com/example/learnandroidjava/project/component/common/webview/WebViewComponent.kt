@@ -1,4 +1,4 @@
-package com.example.learnandroidjava.project.component.common
+package com.example.learnandroidjava.project.component.common.webview
 
 import android.annotation.SuppressLint
 import android.webkit.WebChromeClient
@@ -12,10 +12,6 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.viewinterop.AndroidView
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 
 @SuppressLint("SetJavaScriptEnabled")
@@ -112,46 +108,5 @@ fun rememberWebViewState(
         // trimIndent 删除所有空白缩进
         WebViewState(WebViewData.Html(html.trimIndent(), baseUrl), coroutineScope)
     }
-
-
-class WebViewState(webViewData: WebViewData, private val coroutineScope: CoroutineScope) {
-    var title: String? by mutableStateOf(null)
-        internal set
-
-    val data by mutableStateOf(webViewData)
-
-    enum class EventType {
-        EVALUATE_JS
-    }
-
-    // 共享流的数据类型
-    private class Event(val type: EventType, val args: String, val callback: (String) -> Unit)
-
-
-    // 共享流
-    private val events: MutableSharedFlow<Event> = MutableSharedFlow()
-
-    internal suspend fun WebView.handleEvents(): Unit = withContext(Dispatchers.Main) {
-        events.collect { event ->
-            when (event.type) {
-                EventType.EVALUATE_JS -> {
-                    evaluateJavascript(event.args, event.callback)
-                }
-            }
-        }
-    }
-
-    fun evaluateJavascript(script: String, resultCallback: (String) -> Unit = {}) {
-        coroutineScope.launch {
-            events.emit(Event(EventType.EVALUATE_JS, script, resultCallback)) // 发送事件
-        }
-    }
-}
-
-
-sealed class WebViewData() {
-    data class Url(val url: String) : WebViewData()
-    data class Html(val html: String, val baseUrl: String?) : WebViewData()
-}
 
 

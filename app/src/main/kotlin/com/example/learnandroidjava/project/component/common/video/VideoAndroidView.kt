@@ -1,38 +1,18 @@
-package com.example.learnandroidjava.project.component.learn
+package com.example.learnandroidjava.project.component.common.video
 
 import android.annotation.SuppressLint
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.SurfaceHolder
 import android.view.SurfaceView
 import android.widget.LinearLayout
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.viewinterop.AndroidView
 import com.example.learnandroidjava.R
-import com.example.learnandroidjava.databinding.ActivityIjkplayerBinding
 import tv.danmaku.ijk.media.player.IjkMediaPlayer
-import java.io.IOException
 
 @SuppressLint("InflateParams")
 @Composable
-fun VideoAndroidViewComponent() {
-    val player = IjkMediaPlayer()
-    val url =
-        "http://stream4.iqilu.com/ksd/video/2020/02/17/87d03387a05a0e8aa87370fb4c903133.mp4"
-
-    LaunchedEffect(player) {
-        try {
-            player.dataSource = url
-            player.prepareAsync()
-            player.start();
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-
-    }
-
+fun VideoAndroidViewComponent(player: IjkMediaPlayer) {
     // LocalContext.current === xml 的 context
     // android view 可以引用 xml 写的布局
     AndroidView(factory = { context ->

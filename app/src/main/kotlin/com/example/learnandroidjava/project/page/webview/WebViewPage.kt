@@ -1,6 +1,5 @@
 package com.example.learnandroidjava.project.page.webview
 
-import android.widget.ScrollView
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -11,7 +10,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.NavigateBefore
 import androidx.compose.material.icons.filled.TextFields
@@ -25,6 +23,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.rememberBottomSheetScaffoldState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.remember
@@ -34,21 +33,29 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.learnandroidjava.base.component.ScrollLayout
-import com.example.learnandroidjava.project.component.common.WebViewComponent
-import com.example.learnandroidjava.project.component.common.rememberWebViewState
-import com.example.learnandroidjava.project.component.learn.VideoAndroidViewComponent
+import com.example.learnandroidjava.project.component.common.webview.rememberWebViewState
+import com.example.learnandroidjava.project.component.common.video.VideoAndroidViewComponent
+import com.example.learnandroidjava.project.component.common.video.rememberVideoController
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun WebViewPage() {
+    // remember 代表界面刷新时候记住这个状态值
     var fontScale by remember {
+        // 类似 useState
         mutableFloatStateOf(1.0f)
     }
     val state = rememberWebViewState(url = "https://www.baidu.com")
     val scaleState = rememberBottomSheetScaffoldState()
     val scope = rememberCoroutineScope()
+
+    val videoController = rememberVideoController()
+    LaunchedEffect(videoController) {
+        videoController.start(
+            "http://stream4.iqilu.com/ksd/video/2020/02/17/87d03387a05a0e8aa87370fb4c903133.mp4"
+        )
+    }
 
     BottomSheetScaffold(
         scaffoldState = scaleState,
@@ -119,7 +126,7 @@ fun WebViewPage() {
             .statusBarsPadding(),
 //        sheetPeekHeight = 0.dp,
     ) {
-        VideoAndroidViewComponent()
+        VideoAndroidViewComponent(videoController.player)
         // WebViewComponent(state = state)
     }
 }
