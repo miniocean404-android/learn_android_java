@@ -1,6 +1,6 @@
 package com.example.learnandroidjava.project.page.webview
 
-import android.util.Log
+import android.widget.ScrollView
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.NavigateBefore
 import androidx.compose.material.icons.filled.TextFields
@@ -33,10 +34,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.learnandroidjava.base.component.ScrollLayout
 import com.example.learnandroidjava.project.component.common.WebViewComponent
 import com.example.learnandroidjava.project.component.common.rememberWebViewState
+import com.example.learnandroidjava.project.component.learn.VideoAndroidViewComponent
 import kotlinx.coroutines.launch
-import kotlin.math.log
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -44,7 +46,7 @@ fun WebViewPage() {
     var fontScale by remember {
         mutableFloatStateOf(1.0f)
     }
-
+    val state = rememberWebViewState(url = "https://www.baidu.com")
     val scaleState = rememberBottomSheetScaffoldState()
     val scope = rememberCoroutineScope()
 
@@ -55,6 +57,7 @@ fun WebViewPage() {
                 Text(text = "字体大小", fontSize = 16.sp)
                 Slider(value = fontScale, onValueChange = {
                     fontScale = it
+                    state.evaluateJavascript("document.body.style.zoom = '${fontScale}';")
                 }, steps = 3, valueRange = 0.75f..1.75f)
 
                 Row(
@@ -98,6 +101,7 @@ fun WebViewPage() {
                         modifier = Modifier
                             .clickable {
                                 scope.launch {
+                                    scaleState.bottomSheetState.expand()
                                     if (scaleState.bottomSheetState.currentValue == SheetValue.PartiallyExpanded) {
                                         scaleState.bottomSheetState.show()
                                     } else {
@@ -113,9 +117,9 @@ fun WebViewPage() {
         modifier = Modifier
             .background(MaterialTheme.colorScheme.primary)
             .statusBarsPadding(),
-        sheetPeekHeight = 0.dp,
+//        sheetPeekHeight = 0.dp,
     ) {
-        val state = rememberWebViewState(url = "https://www.baidu.com")
-        WebViewComponent(state = state)
+        VideoAndroidViewComponent()
+        // WebViewComponent(state = state)
     }
 }
