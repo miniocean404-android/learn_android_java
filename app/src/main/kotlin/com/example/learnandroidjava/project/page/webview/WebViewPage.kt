@@ -33,6 +33,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.learnandroidjava.project.component.common.webview.rememberWebViewState
 import com.example.learnandroidjava.project.component.common.video.VideoAndroidViewComponent
 import com.example.learnandroidjava.project.component.common.video.rememberVideoController
@@ -40,7 +41,7 @@ import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun WebViewPage() {
+fun WebViewPage(navController: NavController) {
     // remember 代表界面刷新时候记住这个状态值
     var fontScale by remember {
         // 类似 useState
@@ -97,6 +98,7 @@ fun WebViewPage() {
                         contentDescription = null,
                         modifier = Modifier
                             .clickable {
+                                navController.navigateUp()
                             }
                             .padding(8.dp)
                     )

@@ -8,7 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.example.learnandroidjava.project.page.webview.WebViewPage
+import com.example.learnandroidjava.project.page.AppNavHost
 import com.example.learnandroidjava.theme.ToolTheme
 import com.example.learnandroidjava.utils.immerseNavigationBar
 import com.example.learnandroidjava.utils.immerseStatusBar
@@ -27,8 +27,7 @@ class App : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background,
                 ) {
-                    WebViewPage()
-                    // HomePage()
+                    AppNavHost()
                 }
             }
         }

@@ -39,6 +39,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
 import com.example.learnandroidjava.project.component.learn.CanvasLineChart
 import com.example.learnandroidjava.project.component.learn.CanvasRings
 import com.example.learnandroidjava.project.component.learn.GetScreenDp
@@ -53,9 +54,8 @@ import com.example.learnandroidjava.project.vm.HomeVM
 
 
 @Composable
-fun LearnPage() {
+fun LearnPage(navController: NavController) {
     Home()
-
 }
 
 @SuppressLint("InvalidColorHexValue")
