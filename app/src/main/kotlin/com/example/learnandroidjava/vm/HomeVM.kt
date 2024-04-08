@@ -10,18 +10,34 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import com.example.learnandroidjava.component.logic.notification.intl.NotificationViewModel
 import com.example.learnandroidjava.component.common.swiper.intl.SwiperViewModel
-import com.example.learnandroidjava.entity.Category
+import com.example.learnandroidjava.modal.entity.resp.Category
 import com.example.learnandroidjava.component.common.swiper.entity.DataSwiper
-import com.example.learnandroidjava.entity.DataType
+import com.example.learnandroidjava.modal.api.HomeApi
+import com.example.learnandroidjava.modal.entity.DataType
 
 class HomeVM : ViewModel(), SwiperViewModel, NotificationViewModel {
+    private val homeApiIns = HomeApi.instance()
+    suspend fun getCategories() {
+        val res = homeApiIns.getCategoryApi(1, 10)
+        if (res.code == 0) {
+            categories = res.data
+        } else {
+            val message = res.message
+        }
+    }
+
+
     // 分类标题
-    val categories = mutableListOf(
-        Category("思想政治"),
-        Category("数学"),
-        Category("英语"),
-        Category("物理"),
+    var categories by mutableStateOf(
+        listOf(
+            Category("思想政治"),
+            Category("数学"),
+            Category("英语"),
+            Category("物理"),
+        )
     )
+        private set
+
     var categoryIndex by mutableIntStateOf(0)
 
 
@@ -45,8 +61,11 @@ class HomeVM : ViewModel(), SwiperViewModel, NotificationViewModel {
     )
 
     // 通知数据
-    override val notifications = listOf("通知滚动1通知滚动1通知滚动1通知滚动1通知滚动1通知滚动1通知滚动1通知滚动1","通知滚动2", "通知滚动3", "通知滚动4", "通知滚动5")
-
-
-
+    override val notifications = listOf(
+        "通知滚动1通知滚动1通知滚动1通知滚动1通知滚动1通知滚动1通知滚动1通知滚动1",
+        "通知滚动2",
+        "通知滚动3",
+        "通知滚动4",
+        "通知滚动5"
+    )
 }

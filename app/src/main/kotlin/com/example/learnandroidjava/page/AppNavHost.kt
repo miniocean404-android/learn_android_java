@@ -1,6 +1,8 @@
 package com.example.learnandroidjava.page
 
 import android.annotation.SuppressLint
+import androidx.compose.animation.AnimatedContentScope
+import androidx.compose.animation.AnimatedContentTransitionScope
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.DateRange
@@ -22,7 +24,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navDeepLink
-import com.example.learnandroidjava.entity.NavigationItem
+import com.example.learnandroidjava.modal.entity.NavigationItem
 import com.example.learnandroidjava.navigation.Router
 import com.example.learnandroidjava.page.home.LearnPage
 import com.example.learnandroidjava.page.home.MinePage
@@ -33,6 +35,8 @@ import com.example.learnandroidjava.page.webview.WebViewPage
 // sealed 代表只能被其内部定义的子类继承，而且这些子类必须位于同一个文件中
 // Navigation Compose文章： https://juejin.cn/post/7322789648601366579?searchId=2024040722153417099C92F4152B2A2EFA
 // 仓库：https://github.dev/yaoxiawen/ComposeNavigationDemo
+
+
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun AppNavHost() {
@@ -118,6 +122,12 @@ fun AppNavHost() {
              */
             composable(
                 Router.LEARN,
+                enterTransition = {
+                    slideIntoContainer(towards = AnimatedContentTransitionScope.SlideDirection.Left)
+                },
+                exitTransition = {
+                    slideOutOfContainer(towards = AnimatedContentTransitionScope.SlideDirection.Right)
+                }
 //                arguments = listOf(
 //                    // 参数是String类型可以不用额外指定
 //                    navArgument("name") {},
@@ -137,15 +147,39 @@ fun AppNavHost() {
                 LearnPage(navController)
             }
 
-            composable(Router.TASK) {
+            composable(
+                Router.TASK,
+                enterTransition = {
+                    slideIntoContainer(towards = AnimatedContentTransitionScope.SlideDirection.Left)
+                },
+                exitTransition = {
+                    slideOutOfContainer(towards = AnimatedContentTransitionScope.SlideDirection.Right)
+                }
+            ) {
                 TaskPage(navController)
             }
 
-            composable(Router.MINE) {
+            composable(
+                Router.MINE,
+                enterTransition = {
+                    slideIntoContainer(towards = AnimatedContentTransitionScope.SlideDirection.Left)
+                },
+                exitTransition = {
+                    slideOutOfContainer(towards = AnimatedContentTransitionScope.SlideDirection.Right)
+                }
+            ) {
                 MinePage(navController)
             }
 
-            composable(Router.WEB_VIEW) {
+            composable(
+                Router.WEB_VIEW,
+                enterTransition = {
+                    slideIntoContainer(towards = AnimatedContentTransitionScope.SlideDirection.Left)
+                },
+                exitTransition = {
+                    slideOutOfContainer(towards = AnimatedContentTransitionScope.SlideDirection.Right)
+                }
+            ) {
                 WebViewPage(navController)
             }
 

@@ -1,5 +1,5 @@
 [versions]
-accompanistSystemuicontroller = "0.35.0-alpha"
+accompanistPlaceholderMaterial = "0.34.0"
 adapterRxjava3 = "2.9.0"
 agp = "8.3.1"
 androidGifDrawable = "1.2.28"
@@ -51,6 +51,7 @@ activityCompose = "1.7.0"
 composeBom = "2023.08.00"
 
 [libraries]
+accompanist-placeholder-material = { module = "com.google.accompanist:accompanist-placeholder-material", version.ref = "accompanistPlaceholderMaterial" }
 adapter-rxjava3 = { module = "com.squareup.retrofit2:adapter-rxjava3", version.ref = "adapterRxjava3" }
 android-gif-drawable = { module = "pl.droidsonroids.gif:android-gif-drawable", version.ref = "androidGifDrawable" }
 androidx-constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "constraintlayoutCompose" }

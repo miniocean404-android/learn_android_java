@@ -1,4 +1,4 @@
-package com.example.learnandroidjava.entity
+package com.example.learnandroidjava.modal.entity
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.ui.graphics.vector.ImageVector

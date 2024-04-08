@@ -20,7 +20,7 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
 import androidx.constraintlayout.compose.Dimension
 import coil.compose.AsyncImage
-import com.example.learnandroidjava.entity.ArticleData
+import com.example.learnandroidjava.modal.entity.ArticleData
 
 @Composable
 fun ArticleCard(data: ArticleData) {

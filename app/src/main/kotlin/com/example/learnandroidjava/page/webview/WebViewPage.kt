@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -34,9 +35,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.learnandroidjava.component.common.video.VideoAndroidViewComponent
 import com.example.learnandroidjava.component.common.webview.rememberWebViewState
 import com.example.learnandroidjava.component.common.video.rememberVideoController
 import com.example.learnandroidjava.component.learn.GetScreenDp
+import com.example.learnandroidjava.component.learn.InputLearn
+import com.example.learnandroidjava.component.learn.SkeletonScreen
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -52,11 +56,11 @@ fun WebViewPage(navController: NavController) {
     val scope = rememberCoroutineScope()
 
     val videoController = rememberVideoController()
-    LaunchedEffect(videoController) {
-        videoController.start(
-            "http://stream4.iqilu.com/ksd/video/2020/02/17/87d03387a05a0e8aa87370fb4c903133.mp4"
-        )
-    }
+//    LaunchedEffect(videoController) {
+//        videoController.start(
+//            "http://stream4.iqilu.com/ksd/video/2020/02/17/87d03387a05a0e8aa87370fb4c903133.mp4"
+//        )
+//    }
 
     BottomSheetScaffold(
         scaffoldState = scaleState,
@@ -124,12 +128,14 @@ fun WebViewPage(navController: NavController) {
             )
         },
         modifier = Modifier
-            .background(MaterialTheme.colorScheme.primary)
+            .background(MaterialTheme.colorScheme.primary).fillMaxSize()
             .statusBarsPadding(),
 //        sheetPeekHeight = 0.dp,
     ) {
-        GetScreenDp()
+        // GetScreenDp()
         // VideoAndroidViewComponent(videoController.player)
         // WebViewComponent(state = state)
+        // InputLearn()
+        SkeletonScreen()
     }
 }

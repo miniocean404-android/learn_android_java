@@ -1,4 +1,4 @@
-package com.example.learnandroidjava.theme
+package com.example.learnandroidjava.shared.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

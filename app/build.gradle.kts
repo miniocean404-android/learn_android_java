@@ -57,6 +57,7 @@ android {
 
     buildTypes {
         debug {
+            // 开启 R8 混淆, compose 开启这个就不咋卡顿了
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -67,8 +68,11 @@ android {
         release {
             signingConfig = signingConfigs.getByName("release")
 
-            // 开启了 isMinifyEnabled 一定要配置混淆规则，如果不配置会导致找不到库对应的类文件
+            // 启用 R8 的代码缩减功能， 开启了 isMinifyEnabled 一定要配置混淆规则，如果不配置会导致找不到库对应的类文件
             isMinifyEnabled = true
+            // 启用 R8 的资源缩减功能
+            isShrinkResources = true
+
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -156,8 +160,11 @@ dependencies {
     implementation(libs.androidx.lifecycle.lifecycle.viewmodel.ktx2)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
 
-    // Compose 约束布局
+    // Jetpack Compose 约束布局
     implementation(libs.androidx.constraintlayout.compose)
+
+    // Jetpack Compose 骨架屏
+    implementation(libs.accompanist.placeholder.material)
 
 
     // 添加 recycler_view 依赖
@@ -167,6 +174,7 @@ dependencies {
     // retrofit2.converter Gson 是 retrofit 的 Bean 转换器
     // adapter.rxjava3 解决嵌套请求回调地狱问题
     implementation(libs.com.squareup.retrofit2.retrofit)
+    // 还有一种是 com.squareup.retrofit2:converter-moshi:2.11.0
     implementation(libs.retrofit2.converter.gson)
     implementation(libs.adapter.rxjava3)
 

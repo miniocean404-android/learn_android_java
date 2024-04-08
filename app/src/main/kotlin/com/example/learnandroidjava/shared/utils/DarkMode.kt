@@ -1,4 +1,4 @@
-package com.example.learnandroidjava.utils
+package com.example.learnandroidjava.shared.utils
 
 import android.annotation.SuppressLint
 import android.app.UiModeManager

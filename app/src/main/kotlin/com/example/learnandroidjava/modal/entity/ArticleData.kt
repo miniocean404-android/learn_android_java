@@ -1,4 +1,4 @@
-package com.example.learnandroidjava.entity
+package com.example.learnandroidjava.modal.entity
 
 data class ArticleData(
     val title: String,

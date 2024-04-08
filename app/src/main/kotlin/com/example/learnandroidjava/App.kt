@@ -7,11 +7,14 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
 import com.example.learnandroidjava.page.AppNavHost
-import com.example.learnandroidjava.theme.ToolTheme
-import com.example.learnandroidjava.utils.immerseNavigationBar
-import com.example.learnandroidjava.utils.immerseStatusBar
+import com.example.learnandroidjava.shared.local.LocalHomeVm
+import com.example.learnandroidjava.shared.theme.ToolTheme
+import com.example.learnandroidjava.shared.utils.immerseNavigationBar
+import com.example.learnandroidjava.shared.utils.immerseStatusBar
+import com.example.learnandroidjava.vm.HomeVM
 
 class App : ComponentActivity() {
     @SuppressLint("DiscouragedApi", "InternalInsetResource")
@@ -27,7 +30,11 @@ class App : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background,
                 ) {
-                    AppNavHost()
+
+                    // 提供全局的 HomeVM
+                    CompositionLocalProvider(value = LocalHomeVm provides HomeVM()) {
+                        AppNavHost()
+                    }
                 }
             }
         }

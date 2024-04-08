@@ -1,7 +1,7 @@
 package com.example.learnandroidjava.vm
 
 import androidx.lifecycle.ViewModel
-import com.example.learnandroidjava.entity.ArticleData
+import com.example.learnandroidjava.modal.entity.ArticleData
 
 class ArticleVM : ViewModel() {
     // 新闻列表数据

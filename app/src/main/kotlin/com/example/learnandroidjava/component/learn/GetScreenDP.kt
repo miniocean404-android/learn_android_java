@@ -15,6 +15,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @SuppressLint("UnusedBoxWithConstraintsScope")
@@ -37,36 +38,41 @@ fun GetScreenDp() {
      */
     BoxWithConstraints(modifier = Modifier.fillMaxSize()) {
         Box(
-            modifier = Modifier.background(
-                Brush.linearGradient(
-                    listOf(
-                        Color(0xffbb8378),
-                        Color.Transparent
-                    ),
-                    start = Offset(x = screenWidth, y = 0f),
-                    end = Offset(x = 0f, y = screenHeight)
+            modifier = Modifier
+                .fillMaxSize()
+                .background(
+                    Brush.linearGradient(
+                        listOf(
+                            Color(0xffbb8378),
+                            Color.Transparent
+                        ),
+                        start = Offset(x = screenWidth, y = 0f),
+                        end = Offset(x = 0f, y = screenHeight / 3)
 
+                    )
                 )
-            )
         ) {
             Column {
-                Text(text = "获取屏幕宽度 dp: $screenWidth")
-                Text(text = "获取屏幕高度 dp: $screenHeight")
+                Text(text = "获取屏幕宽度 dp 2 px: $screenWidth")
+                Text(text = "获取屏幕高度 dp 2 px: $screenHeight")
             }
         }
 
         Box(
-            modifier = Modifier.background(
-                Brush.linearGradient(
-                    listOf(
-                        Color(0xffbb8378),
-                        Color.Transparent
-                    ),
-                    start = Offset(x = 0f, y = constraints.maxHeight.toFloat()),
-                    end = Offset(x = constraints.maxWidth.toFloat(), y = 0f)
+            modifier = Modifier
+                .fillMaxSize()
+                .background(
+                    Brush.linearGradient(
+                        listOf(
+                            Color(0xff8e0dd6),
+                            Color.Transparent
+                        ),
+                        start = Offset(x = 0f, y = constraints.maxHeight.toFloat()),
+                        end = Offset(x = constraints.maxWidth.toFloat() / 3, y = 0f)
+                    )
                 )
-            )
         ) {
         }
     }
 }
+

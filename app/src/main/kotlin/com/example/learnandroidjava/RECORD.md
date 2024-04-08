@@ -7,6 +7,8 @@ TabRow与HorizontalPager 联动: https://juejin.cn/post/7239630585500155961#head
 ## 导航
 https://juejin.cn/post/7108633789051944997
 
+### 开启 R8
+
 ###  设置状态栏透明
 最优：
 ```kotlin

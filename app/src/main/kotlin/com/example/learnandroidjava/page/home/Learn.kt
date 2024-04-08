@@ -29,6 +29,7 @@ import androidx.compose.material3.Tab
 import androidx.compose.material3.TabRow
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -49,6 +50,7 @@ import com.example.learnandroidjava.component.common.custom_app_bar.CustomTopApp
 import com.example.learnandroidjava.component.logic.notification.NotificationComponent
 import com.example.learnandroidjava.component.common.swiper.Swiper
 import com.example.learnandroidjava.component.logic.article.ArticleCard
+import com.example.learnandroidjava.shared.local.LocalHomeVm
 import com.example.learnandroidjava.vm.ArticleVM
 import com.example.learnandroidjava.vm.HomeVM
 
@@ -61,6 +63,15 @@ fun LearnPage(navController: NavController) {
 @SuppressLint("InvalidColorHexValue")
 @Composable
 fun Home(homeVm: HomeVM = viewModel(), articleVm: ArticleVM = ArticleVM()) {
+
+    // 获取 CompositionLocalProvider 提供的全局 vm
+    val localHomeVm = LocalHomeVm.current
+
+    LaunchedEffect(Unit) {
+        // 启动时请求 api
+        // homeVm.getCategories()
+    }
+
     Column {
         CustomTopAppBar(
             modifier = Modifier.padding(horizontal = 16.dp),
