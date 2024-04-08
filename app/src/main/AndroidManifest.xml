@@ -148,12 +148,6 @@
         <activity android:name=".activity.base.scroll.ViewPageActivity" />
         <activity android:name=".activity.lib.OkHttpActivity" />
         <activity android:name=".activity.base.api.SharePreferencesActivity" />
-        <activity
-            android:name=".base.compose.ComposeAppActivity"
-            android:exported="true"
-            android:label="@string/title_activity_layout"
-            android:theme="@style/Theme.Tool" />
-        <activity android:name="com.example.learnandroidjava.project.App" />
 
         <meta-data
             android:name="android.notch_support"
