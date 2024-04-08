@@ -166,6 +166,9 @@ dependencies {
     // Jetpack Compose 骨架屏
     implementation(libs.accompanist.placeholder.material)
 
+    // Jetpack Compose 类似 SharedPreferences
+    implementation(libs.androidx.datastore.datastore.preferences2)
+
 
     // 添加 recycler_view 依赖
     implementation(libs.androidx.recyclerview)
