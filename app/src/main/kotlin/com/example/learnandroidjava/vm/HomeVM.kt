@@ -1,5 +1,6 @@
 package com.example.learnandroidjava.vm
 
+import android.content.Context
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Description
 import androidx.compose.material.icons.filled.SmartDisplay
@@ -8,19 +9,32 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.learnandroidjava.component.logic.notification.intl.NotificationViewModel
 import com.example.learnandroidjava.component.common.swiper.intl.SwiperViewModel
 import com.example.learnandroidjava.modal.entity.resp.Category
 import com.example.learnandroidjava.component.common.swiper.entity.DataSwiper
 import com.example.learnandroidjava.modal.api.HomeApi
 import com.example.learnandroidjava.modal.entity.DataType
+import com.example.learnandroidjava.modal.store.UserInfoStore
+import kotlinx.coroutines.launch
 
-class HomeVM : ViewModel(), SwiperViewModel, NotificationViewModel {
+class HomeVM(context: Context) : ViewModel(), SwiperViewModel, NotificationViewModel {
+    // 请求
     private val homeApiIns = HomeApi.instance()
+    // datastore
+    private val userInfoStore = UserInfoStore(context)
+
+
     suspend fun getCategories() {
         val res = homeApiIns.getCategoryApi(1, 10)
         if (res.code == 0) {
             categories = res.data
+
+            // 存储 store
+            viewModelScope.launch {
+                userInfoStore.save("name")
+            }
         } else {
             val message = res.message
         }

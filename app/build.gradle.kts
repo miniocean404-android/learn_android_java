@@ -40,10 +40,11 @@ android {
     }
 
     sourceSets {
-        // 指定本地三方依赖位置(有问题)
-        // getByName("main") {
-        //    jniLibs.srcDirs("libs")
-        // }
+        // 指定本地三方依赖位置, 用于配置 so 文件
+        // 配置需要指定 ndk 的类型文件夹，且添加位于此文件夹的上一级
+        getByName("main") {
+            jniLibs.srcDirs("libs/ijkplayer")
+        }
     }
 
     signingConfigs {
@@ -72,6 +73,7 @@ android {
             isMinifyEnabled = true
             // 启用 R8 的资源缩减功能
             isShrinkResources = true
+
 
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -111,6 +113,10 @@ android {
         variant.outputs
             .map { it as BaseVariantOutputImpl }
             .forEach { output ->
+                if (variant.buildType.name == "debug") {
+                    output.outputFileName = variant.baseName + "_v" + versionName + "_" + variant.buildType.name + ".apk"
+                }
+
                 if (variant.buildType.name == "release") {
                     val dateFormat = SimpleDateFormat("yyyyMMddHHmm")
                     dateFormat.timeZone = TimeZone.getTimeZone("Asia/Shanghai")
@@ -120,6 +126,18 @@ android {
                     output.outputFileName = outputFileName
                 }
             }
+
+        // AndroidManifest 输出配置
+//        variant.outputs[0].processManifest.doLast {
+//            def manifestFile = "${manifestOutputDirectory}/AndroidManifest.xml"
+//            def updatedContent = new File(manifestFile).getText('UTF-8')
+//                .replaceAll("UMENG_APPKEY_VALUE", "5cb16d93570df399fd0014e2") // 友盟 AppKey
+//                .replaceAll("QQ_APPID_VALUE", "100424468") // QQ AppId
+//                .replaceAll("QQ_APPKEY_VALUE", "c7394704798a158208a74ab60104f0ba") // QQ Key
+//                .replaceAll("WX_APPID_VALUE", "wxdc1e388c3822c80b") // 微信 AppId
+//                .replaceAll("WX_APPKEY_VALUE", "3baf1193c85774b3fd9d18447d76cab0") // 微信 Key
+//            new File(manifestFile).write(updatedContent, 'UTF-8')
+//        }
     }
 }
 
@@ -144,6 +162,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.material)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
@@ -152,14 +171,11 @@ dependencies {
     implementation(libs.androidx.material.icons.extended)
     // compose 导航
     implementation(libs.androidx.navigation.navigation.compose)
-
     // Jetpack Compose 网络图片加载
     implementation(libs.coil.kt.coil.compose)
-
     // Jetpack Compose ViewModel
     implementation(libs.androidx.lifecycle.lifecycle.viewmodel.ktx2)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
-
     // Jetpack Compose 约束布局
     implementation(libs.androidx.constraintlayout.compose)
 
@@ -179,14 +195,11 @@ dependencies {
     implementation(libs.com.squareup.retrofit2.retrofit)
     // 还有一种是 com.squareup.retrofit2:converter-moshi:2.11.0
     implementation(libs.retrofit2.converter.gson)
+    implementation(libs.converter.moshi)
     implementation(libs.adapter.rxjava3)
 
     // ijkplayer
     implementation(libs.tv.ijkplayer.java)
-    implementation(libs.tv.ijkplayer.armv7a)
-    implementation(libs.ijkplayer.arm64)
-    implementation(libs.ijkplayer.x86)
-    implementation(libs.ijkplayer.x8664)
 
     // 可选
     // implementation("tv.danmaku.ijk.media:ijkplayer-armv5:0.8.8")
@@ -221,7 +234,7 @@ dependencies {
     // ksp(libs.glide2.ksp)
 
     // 高德地图
-    implementation(files("libs/arr/AMap3DMap_10.0.600_AMapSearch_9.7.1_AMapLocation_6.4.3_20240314.aar"))
+    implementation(files("libs/amap/AMap3DMap_10.0.600_AMapSearch_9.7.1_AMapLocation_6.4.3_20240314.aar"))
 
 
     // 图片内存优化 fresco

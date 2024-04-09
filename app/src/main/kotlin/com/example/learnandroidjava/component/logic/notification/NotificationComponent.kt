@@ -94,10 +94,4 @@ fun <T> NotificationComponent(vm: T) where T : ViewModel, T : NotificationViewMo
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun NotificationComponentPreview() {
-    NotificationComponent(HomeVM())
-}
-
 

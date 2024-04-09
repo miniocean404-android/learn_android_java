@@ -9,6 +9,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import com.example.learnandroidjava.page.AppNavHost
 import com.example.learnandroidjava.shared.local.LocalHomeVm
 import com.example.learnandroidjava.shared.theme.ToolTheme
@@ -32,7 +33,7 @@ class App : ComponentActivity() {
                 ) {
 
                     // 提供全局的 HomeVM
-                    CompositionLocalProvider(value = LocalHomeVm provides HomeVM()) {
+                    CompositionLocalProvider(value = LocalHomeVm provides HomeVM(LocalContext.current)) {
                         AppNavHost()
                     }
                 }

@@ -13,7 +13,7 @@ import java.io.IOException
  * 文章： https://juejin.cn/post/7094924395646287880
  */
 class IjkplayerActivity : AppCompatActivity() {
-    private val url:String = "http://stream4.iqilu.com/ksd/video/2020/02/17/87d03387a05a0e8aa87370fb4c903133.mp4"
+    private val url:String = "https://v3-web.douyinvod.com/6b3097d828e657647c9fbae84049f489/661568fb/video/tos/cn/tos-cn-ve-15/o4POJTnhcTIaCUtzAzQEelGfyt8AWUADAz1BgZ/?a=6383&ch=5&cr=3&dr=0&lr=all&cd=0%7C0%7C0%7C3&cv=1&br=993&bt=993&cs=0&ds=4&ft=LjhJEL998xztuo0mo0P5fQhlpPiX7F~WxVJEcmseQbPD-Ipz&mime_type=video_mp4&qs=0&rc=OjU6Njo5ZTNmaTc3aTs5OUBpanRza2k6ZjxzcjMzNGkzM0BjMjExMS9jNjQxMTEzXl81YSNuZmVtcjRvNDZgLS1kLTBzcw%3D%3D&btag=e00028000&cquery=101s_100B_100H_100K_100a&dy_q=1712675397&feature_id=46a7bb47b4fd1280f3d3825bf2b29388&l=202404092309554991CDB4A0A5E0577248"
 
     private val tag: String = "mini_ocean"
     private lateinit var mSurfaceView: SurfaceView

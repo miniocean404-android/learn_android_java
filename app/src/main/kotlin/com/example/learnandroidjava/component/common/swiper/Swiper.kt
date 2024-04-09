@@ -170,8 +170,4 @@ fun Modifier.carouselTransition(page: Int, state: PagerState) = graphicsLayer {
     scaleY = transformation
 }
 
-@Preview(showBackground = true)
-@Composable
-fun LearnPagePreview() {
-    Swiper(HomeVM())
-}
+

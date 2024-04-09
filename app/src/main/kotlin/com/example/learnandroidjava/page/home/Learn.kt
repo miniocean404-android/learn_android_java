@@ -35,6 +35,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -62,7 +63,7 @@ fun LearnPage(navController: NavController) {
 
 @SuppressLint("InvalidColorHexValue")
 @Composable
-fun Home(homeVm: HomeVM = viewModel(), articleVm: ArticleVM = ArticleVM()) {
+fun Home(homeVm: HomeVM = HomeVM(LocalContext.current), articleVm: ArticleVM = ArticleVM(LocalContext.current)) {
 
     // 获取 CompositionLocalProvider 提供的全局 vm
     val localHomeVm = LocalHomeVm.current

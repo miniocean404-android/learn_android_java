@@ -1,9 +1,23 @@
 package com.example.learnandroidjava.vm
 
+import android.content.Context
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.learnandroidjava.modal.entity.ArticleData
+import com.example.learnandroidjava.modal.store.UserInfoStore
+import kotlinx.coroutines.launch
 
-class ArticleVM : ViewModel() {
+class ArticleVM(context: Context) : ViewModel() {
+    // datastore
+    private val userInfoStore = UserInfoStore(context)
+
+    init {
+        // 获取 datastore 数据
+        viewModelScope.launch {
+            val username = userInfoStore.username
+        }
+    }
+
     // 新闻列表数据
     var newsList = mutableListOf(
         ArticleData(
