@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.learnandroidjava.databinding.ActivityRoomBinding
-import com.example.learnandroidjava.shared.db.entity.Student
-import com.example.learnandroidjava.shared.db.manager.DBEngine
+import com.example.learnandroidjava.db.entity.Student
+import com.example.learnandroidjava.db.manager.DBEngine
 
 class RoomActivity : AppCompatActivity(), View.OnClickListener {
     private val TAG: String? = RoomActivity::class.simpleName

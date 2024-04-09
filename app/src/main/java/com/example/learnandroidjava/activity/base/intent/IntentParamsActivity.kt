@@ -3,14 +3,10 @@ package com.example.learnandroidjava.activity.base.intent
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.learnandroidjava.R
 import com.example.learnandroidjava.databinding.ActivityIntentParamsBinding
-import com.example.learnandroidjava.shared.parcelable.ParcelableTest
-import com.example.learnandroidjava.shared.serializable.SerializableTest
+import com.example.learnandroidjava.shared.route_params.parcelable.ParcelableTest
+import com.example.learnandroidjava.shared.route_params.serializable.SerializableTest
 
 class IntentParamsActivity : AppCompatActivity(), View.OnClickListener {
     private val binding: ActivityIntentParamsBinding by lazy {

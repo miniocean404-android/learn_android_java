@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.learnandroidjava.R
 import com.example.learnandroidjava.databinding.ActivitySoundPoolBinding
 import com.example.learnandroidjava.shared.adapter.SoundPoolAdapter
-import com.example.learnandroidjava.shared.bean.Sound
+import com.example.learnandroidjava.model.bean.Sound
 
 class SoundPoolActivity : AppCompatActivity(), SoundPoolAdapter.OnItemClickListener {
     private var data: List<Sound>? = null

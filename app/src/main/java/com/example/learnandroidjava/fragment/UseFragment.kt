@@ -11,12 +11,12 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import com.example.learnandroidjava.R
-import com.example.learnandroidjava.shared.intel.IFragmentCallback
+import com.example.learnandroidjava.shared.intel.IFragmentActivityCommunicate
 
 class UseFragment : Fragment() ,View.OnClickListener{
     private val tag: String = "mini_ocean"
     private var root: View? = null
-    private var fragmentCallback: IFragmentCallback? = null
+    private var fragmentCallback: IFragmentActivityCommunicate? = null
 
     /**
      * 打开界面
@@ -93,7 +93,7 @@ class UseFragment : Fragment() ,View.OnClickListener{
         super.onDetach()
     }
 
-    fun setCallback(fragmentCallback: IFragmentCallback) {
+    fun setCallback(fragmentCallback: IFragmentActivityCommunicate) {
         this.fragmentCallback = fragmentCallback
     }
 

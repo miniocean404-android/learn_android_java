@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.learnandroidjava.R
-import com.example.learnandroidjava.shared.api.HttpBinApi
-import com.example.learnandroidjava.shared.bean.RxJavaResponse
+import com.example.learnandroidjava.model.api.HttpBinApi
+import com.example.learnandroidjava.model.bean.RxJavaResponse
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.functions.Consumer
 import io.reactivex.rxjava3.functions.Function

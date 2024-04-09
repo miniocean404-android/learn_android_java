@@ -1,4 +1,4 @@
-package com.example.learnandroidjava.shared.serializable
+package com.example.learnandroidjava.shared.route_params.serializable
 
 import java.io.Serializable
 

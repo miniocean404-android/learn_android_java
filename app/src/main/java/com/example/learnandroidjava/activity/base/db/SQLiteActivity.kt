@@ -6,7 +6,7 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.learnandroidjava.databinding.ActivitySqliteBinding
-import com.example.learnandroidjava.shared.utils.SQLiteHelper
+import com.example.learnandroidjava.db.SQLiteHelper
 
 class SQLiteActivity : AppCompatActivity(), View.OnClickListener {
     private val TAG: String? = SQLiteActivity::class.simpleName

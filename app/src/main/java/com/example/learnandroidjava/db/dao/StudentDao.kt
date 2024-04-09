@@ -1,11 +1,11 @@
-package com.example.learnandroidjava.shared.db.dao
+package com.example.learnandroidjava.db.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
-import com.example.learnandroidjava.shared.db.entity.Student
+import com.example.learnandroidjava.db.entity.Student
 
 @Dao
 interface StudentDao {

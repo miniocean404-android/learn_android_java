@@ -1,6 +1,6 @@
-package com.example.learnandroidjava.shared.api
+package com.example.learnandroidjava.model.api
 
-import com.example.learnandroidjava.shared.bean.RxJavaResponse
+import com.example.learnandroidjava.model.bean.RxJavaResponse
 import io.reactivex.rxjava3.core.Flowable
 import okhttp3.MultipartBody
 import okhttp3.RequestBody

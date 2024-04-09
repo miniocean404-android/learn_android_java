@@ -9,12 +9,11 @@ import android.graphics.Paint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.learnandroidjava.databinding.ActivityRxJavaBinding;
-import com.example.learnandroidjava.shared.bean.RxJavaResponse;
-import com.example.learnandroidjava.shared.bean.RxJavaSuccessResponse;
-import com.example.learnandroidjava.shared.observer.RxJavaRespObserver;
+import com.example.learnandroidjava.model.bean.RxJavaResponse;
+import com.example.learnandroidjava.model.bean.RxJavaSuccessResponse;
+import com.example.learnandroidjava.shared.rx_observer.RxJavaRespObserver;
 import com.hjq.toast.Toaster;
 
 import androidx.appcompat.app.AppCompatActivity;

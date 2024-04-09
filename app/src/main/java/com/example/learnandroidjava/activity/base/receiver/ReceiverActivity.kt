@@ -11,8 +11,8 @@ import com.example.learnandroidjava.activity.base.service.ServiceActivity
 import com.example.learnandroidjava.databinding.ActivityReceiverBinding
 import com.example.learnandroidjava.shared.constant.DYNAMIC_BROADCAST_Receivers
 import com.example.learnandroidjava.shared.constant.STCTIC_BROADCAST_Receivers
-import com.example.learnandroidjava.shared.receiver.DynamicReceiver
-import com.example.learnandroidjava.shared.receiver.StaticReceiver
+import com.example.learnandroidjava.shared.broadcast.receiver.DynamicReceiver
+import com.example.learnandroidjava.shared.broadcast.receiver.StaticReceiver
 
 /**
  * 广播
@@ -44,7 +44,7 @@ class ReceiverActivity : AppCompatActivity() {
         // 发送广播给 静态 接受者(使用场景不多)
         bind.sendBroadcastStaticReceiverBtn.setOnClickListener {
             val intent = Intent(STCTIC_BROADCAST_Receivers)
-            intent.setComponent(ComponentName(this@ReceiverActivity,StaticReceiver::class.java))
+            intent.setComponent(ComponentName(this@ReceiverActivity, StaticReceiver::class.java))
             sendBroadcast(intent)
         }
 

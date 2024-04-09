@@ -1,10 +1,10 @@
-package com.example.learnandroidjava.shared.db.manager
+package com.example.learnandroidjava.db.manager
 
 import android.content.Context
 import android.util.Log
-import com.example.learnandroidjava.shared.db.dao.StudentDao
-import com.example.learnandroidjava.shared.db.database.StudentDatabase
-import com.example.learnandroidjava.shared.db.entity.Student
+import com.example.learnandroidjava.db.dao.StudentDao
+import com.example.learnandroidjava.db.database.StudentDatabase
+import com.example.learnandroidjava.db.entity.Student
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlin.coroutines.CoroutineContext

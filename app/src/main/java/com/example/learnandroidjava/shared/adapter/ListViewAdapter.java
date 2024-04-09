@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.learnandroidjava.R;
-import com.example.learnandroidjava.shared.bean.ListViewBean;
+import com.example.learnandroidjava.model.bean.ListViewBean;
 
 import java.util.List;
 

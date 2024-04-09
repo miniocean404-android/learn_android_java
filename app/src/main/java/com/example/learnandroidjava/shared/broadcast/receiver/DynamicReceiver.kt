@@ -1,4 +1,4 @@
-package com.example.learnandroidjava.shared.receiver
+package com.example.learnandroidjava.shared.broadcast.receiver
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -6,9 +6,9 @@ import android.content.Intent
 import android.util.Log
 import com.hjq.toast.Toaster
 
-class StaticReceiver : BroadcastReceiver(){
-    private val TAG: String? = StaticReceiver::class.simpleName
+class DynamicReceiver: BroadcastReceiver() {
+    private val TAG: String? = DynamicReceiver::class.simpleName
     override fun onReceive(p0: Context?, p1: Intent?) {
-        Toaster.show("静态广播接受者")
+        Toaster.show("动态广播接受者")
     }
 }

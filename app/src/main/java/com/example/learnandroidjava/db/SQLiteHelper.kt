@@ -1,4 +1,4 @@
-package com.example.learnandroidjava.shared.utils
+package com.example.learnandroidjava.db
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase

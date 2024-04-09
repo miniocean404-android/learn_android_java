@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.LinearLayout.LayoutParams
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.learnandroidjava.shared.bean.Sound
+import com.example.learnandroidjava.model.bean.Sound
 
 
 open class SoundPoolAdapter(

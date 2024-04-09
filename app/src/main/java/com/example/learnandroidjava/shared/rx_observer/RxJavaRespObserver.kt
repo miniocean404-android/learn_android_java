@@ -1,7 +1,7 @@
-package com.example.learnandroidjava.shared.observer
+package com.example.learnandroidjava.shared.rx_observer
 
-import com.example.learnandroidjava.shared.bean.RxJavaResponse
-import com.example.learnandroidjava.shared.bean.RxJavaSuccessResponse
+import com.example.learnandroidjava.model.bean.RxJavaResponse
+import com.example.learnandroidjava.model.bean.RxJavaSuccessResponse
 import io.reactivex.rxjava3.core.Observer
 import io.reactivex.rxjava3.disposables.Disposable
 

@@ -1,4 +1,4 @@
-package com.example.learnandroidjava.shared.parcelable
+package com.example.learnandroidjava.shared.route_params.parcelable
 
 import android.os.Parcel
 import android.os.Parcelable

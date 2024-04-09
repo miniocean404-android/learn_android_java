@@ -1,4 +1,4 @@
-package com.example.learnandroidjava.shared.bean;
+package com.example.learnandroidjava.model.bean;
 
 public class RecyclerViewBean {
     String name;

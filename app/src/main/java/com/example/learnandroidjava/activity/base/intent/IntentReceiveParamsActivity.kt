@@ -3,8 +3,8 @@ package com.example.learnandroidjava.activity.base.intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.learnandroidjava.databinding.ActivityIntentReceiveParamsBinding
-import com.example.learnandroidjava.shared.parcelable.ParcelableTest
-import com.example.learnandroidjava.shared.serializable.SerializableTest
+import com.example.learnandroidjava.shared.route_params.parcelable.ParcelableTest
+import com.example.learnandroidjava.shared.route_params.serializable.SerializableTest
 import com.hjq.toast.Toaster
 
 class IntentReceiveParamsActivity : AppCompatActivity() {

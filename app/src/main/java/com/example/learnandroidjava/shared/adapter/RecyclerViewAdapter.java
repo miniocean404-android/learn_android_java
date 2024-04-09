@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.learnandroidjava.R;
-import com.example.learnandroidjava.shared.bean.RecyclerViewBean;
+import com.example.learnandroidjava.model.bean.RecyclerViewBean;
 
 import java.util.List;
 

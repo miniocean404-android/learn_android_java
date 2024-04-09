@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import com.example.learnandroidjava.R
 import com.example.learnandroidjava.fragment.ReplaceFragment
 import com.example.learnandroidjava.fragment.UseFragment
-import com.example.learnandroidjava.shared.intel.IFragmentCallback
+import com.example.learnandroidjava.shared.intel.IFragmentActivityCommunicate
 
 class UseFragmentActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +37,7 @@ class UseFragmentActivity : AppCompatActivity(), View.OnClickListener {
 
                 // fragment 与 activity 通信
                 // 其他方案 eventBus LiveData
-                fragment.setCallback(object : IFragmentCallback {
+                fragment.setCallback(object : IFragmentActivityCommunicate {
                     override fun sendToActivity(message: String) {
                         Toast.makeText(this@UseFragmentActivity, message, Toast.LENGTH_SHORT).show()
                     }

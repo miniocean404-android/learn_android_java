@@ -1,4 +1,4 @@
-package com.example.learnandroidjava.shared.bean
+package com.example.learnandroidjava.model.bean
 
 // JvmOverloads constructor 设置为有参无参构造
 open class RxJavaResponse @JvmOverloads constructor(

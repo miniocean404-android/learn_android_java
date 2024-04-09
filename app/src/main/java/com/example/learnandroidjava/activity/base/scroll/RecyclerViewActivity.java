@@ -9,8 +9,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.example.learnandroidjava.R;
 import com.example.learnandroidjava.shared.adapter.RecyclerViewAdapter;
-import com.example.learnandroidjava.shared.bean.RecyclerViewBean;
-import com.gyf.immersionbar.ImmersionBar;
+import com.example.learnandroidjava.model.bean.RecyclerViewBean;
 
 import java.util.ArrayList;
 import java.util.List;
