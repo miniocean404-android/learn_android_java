@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.learnandroidjava.databinding.ActivityShapeBinding
 
 class ShapeActivity : AppCompatActivity() {
-    private val binding: ActivityShapeBinding = ActivityShapeBinding.inflate(layoutInflater)
+    private val binding: ActivityShapeBinding by lazy {
+        ActivityShapeBinding.inflate(layoutInflater)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -9,6 +9,12 @@
 
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
+        android:layout_height="wrap_content"
+        android:background="@drawable/learn_shape"
+        android:backgroundTint="@drawable/learn_shape"
+        android:gravity="center"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="按钮"
+        />
 </LinearLayout>
