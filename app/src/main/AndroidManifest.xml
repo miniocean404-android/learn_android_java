@@ -60,7 +60,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnAndroidJava"
         tools:targetApi="31">
-
+        <activity
+            android:name=".activity.base.ui.ShapeActivity"
+            android:exported="false" />
         <activity
             android:name=".activity.base.media.SoundPoolActivity"
             android:exported="false" />
@@ -148,7 +150,7 @@
         <activity android:name=".activity.base.scroll.ViewPageActivity" />
         <activity android:name=".activity.lib.OkHttpActivity" />
         <activity android:name=".activity.base.api.SharePreferencesActivity" />
-        <activity android:name="com.example.learnandroidjava.App" />
+        <activity android:name=".App" />
 
         <meta-data
             android:name="android.notch_support"
