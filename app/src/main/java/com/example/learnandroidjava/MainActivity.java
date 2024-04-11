@@ -40,6 +40,7 @@ import com.example.learnandroidjava.learn.activity.base.scroll.ViewPage2Activity
 import com.example.learnandroidjava.learn.activity.base.scroll.ViewPageActivity;
 import com.example.learnandroidjava.learn.activity.lib.PermissionsActivity;
 import com.example.learnandroidjava.learn.activity.lib.RxJavaActivity;
+import com.example.learnandroidjava.project.tab.TabActivity;
 import com.gyf.immersionbar.ImmersionBar;
 
 
@@ -88,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         jump(this, R.id.go_intent_params_btn, IntentParamsActivity.class);
         jump(this, R.id.go_media_recorder_btn, MediaRecorderActivity.class);
         jump(this, R.id.go_compose_project_btn, App.class);
-        jump(this, R.id.go_shape_btn, ShapeActivity.class);
+        jump(this, R.id.go_mvvm_btn, TabActivity.class);
     }
 
     @Override

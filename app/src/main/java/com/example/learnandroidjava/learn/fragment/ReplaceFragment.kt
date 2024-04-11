@@ -9,7 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.learnandroidjava.R
-import com.example.learnandroidjava.learn.shared.adapter.MyItemRecyclerViewAdapter
+import com.example.learnandroidjava.learn.shared.adapter.recycler_view.MyItemRecyclerViewAdapter
 import com.example.learnandroidjava.learn.fragment.placeholder.PlaceholderContent
 
 /**

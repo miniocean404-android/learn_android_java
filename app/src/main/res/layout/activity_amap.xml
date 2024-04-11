@@ -5,10 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.lib.AMapActivity">
+    tools:context=".learn.activity.lib.AMapActivity">
 
     <com.amap.api.maps.MapView
         android:id="@+id/amap"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+    <Button
+        android:id="@+id/go_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="前往导航" />
+
 </LinearLayout>

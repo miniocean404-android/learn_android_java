@@ -6,8 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.example.learnandroidjava.R
 import com.example.learnandroidjava.R.id.view_page2
-import com.example.learnandroidjava.learn.shared.adapter.ViewPage2Adapter
-import com.example.learnandroidjava.learn.shared.adapter.ViewPageAdapter
+import com.example.learnandroidjava.learn.shared.adapter.recycler_view.ViewPage2Adapter
 
 class ViewPage2Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

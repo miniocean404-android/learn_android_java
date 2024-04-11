@@ -1,28 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
-    <!--  绑定 viewmodel  -->
-    <data>
-        <variable
-            name="tabVm"
-            type="com.example.learnandroidjava.project.tab.TabViewModal" />
-    </data>
+<?xml version="1.0" encoding="utf-8"?><!--<layout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools">-->
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/main"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+<!--    <data>-->
+<!--        <variable-->
+<!--            name="homeVm"-->
+<!--            type="com.example.learnandroidjava.project.tab.TabViewModal" />-->
+<!--    </data>-->
+<!--<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:orientation="vertical">-->
 
-        <androidx.viewpager2.widget.ViewPager2
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintTop_toTopOf="parent" />
+<!--    <androidx.viewpager2.widget.ViewPager2-->
+<!--        android:id="@+id/tabViewPager2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_weight="1"-->
+<!--        android:layoutDirection="ltr"-->
+<!--        android:orientation="horizontal" />-->
 
-        <!--    constraintBottom_toBottomOf 元素底部贴近父的底部    -->
-        <com.miniocean.base.tab.NavigationBottomBar
-            android:id="@+id/bottom_bar"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            app:layout_constraintBottom_toBottomOf="parent" />
+<!--</androidx.appcompat.widget.LinearLayoutCompat>-->
+<!--   -->
+<!--</layout>-->
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MainFragment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,8 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.learnandroidjava.R;
 import com.example.learnandroidjava.learn.model.bean.ListViewBean;
-import com.example.learnandroidjava.learn.shared.adapter.ListViewAdapter;
-import com.example.learnandroidjava.learn.model.bean.ListViewBean;
+import com.example.learnandroidjava.learn.shared.adapter.list_view.ListViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

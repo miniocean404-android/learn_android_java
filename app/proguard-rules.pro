@@ -46,5 +46,25 @@
 # Uncomment this if you use Mockito
 -dontwarn org.mockito.**
 
+
+#3D地图 V5.0.0之后：
+-keep class com.amap.api.maps.**{*;}
+-keep class com.autonavi.**{*;}
+-keep class com.amap.api.trace.**{*;}
+
+#定位：
+-keep class com.amap.api.location.**{*;}
+-keep class com.amap.api.fence.**{*;}
+-keep class com.autonavi.aps.amapapi.model.**{*;}
+
+#搜索：
+-keep class com.amap.api.services.**{*;}
+
+#导航 V8.1.0及以后：
+-keep class com.amap.api.navi.**{*;}
+-keep class com.alibaba.idst.nui.* {*;}
+-keep class com.google.**{*;}
+
+
 # dontwarn 用于告诉 ProGuard 在优化和混淆代码时不要输出警告消息。通常用于防止特定类或方法的警告信息出现，尤其是在使用第三方库时可能会用到
 # -keep 用于指示 ProGuard 保留特定类、方法或字段，以避免被优化和混淆。可以使用 keep 来确保某些类或成员变量不被移除

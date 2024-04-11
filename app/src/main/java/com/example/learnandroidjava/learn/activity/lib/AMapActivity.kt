@@ -1,9 +1,12 @@
 package com.example.learnandroidjava.learn.activity.lib
 
+import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.amap.api.location.AMapLocation
@@ -30,7 +33,7 @@ import java.util.Locale
  * 文章：https://blog.csdn.net/Qinbenjiaren/article/details/130743437
  * https://juejin.cn/post/7087286815807242254
  */
-class AMapActivity : AppCompatActivity() {
+class AMapActivity : AppCompatActivity(), View.OnClickListener {
     private val TAG: String? = AMapActivity::class.simpleName
 
     private val bind: ActivityAmapBinding by lazy {
@@ -47,6 +50,7 @@ class AMapActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(bind.root)
+        bind.goSearch.setOnClickListener(this)
 
         getSha1(this)
 
@@ -134,6 +138,7 @@ class AMapActivity : AppCompatActivity() {
     }
 
 
+    @SuppressLint("SimpleDateFormat")
     fun onLocationChanged(aMapLocation: AMapLocation?) {
         Log.i("aMapLocation：pcw", "lat : $aMapLocation")
 
@@ -245,5 +250,9 @@ class AMapActivity : AppCompatActivity() {
             e.printStackTrace()
         }
         return ""
+    }
+
+    override fun onClick(view: View?) {
+        startActivity(Intent(this, AMapSearchActivity::class.java))
     }
 }

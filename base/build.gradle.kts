@@ -30,14 +30,6 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_17.toString()
     }
-
-    buildFeatures {
-        // 启动视图绑定
-        viewBinding = true
-        // 开启 Jetpack Compose
-        compose = true
-    }
-
 }
 
 dependencies {

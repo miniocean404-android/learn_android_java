@@ -98,7 +98,7 @@ android {
 
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.5.2"
     }
 
     packaging {
@@ -239,8 +239,7 @@ dependencies {
     // ksp(libs.glide2.ksp)
 
     // 高德地图
-    implementation(files("libs/amap/AMap3DMap_10.0.600_AMapSearch_9.7.1_AMapLocation_6.4.3_20240314.aar"))
-
+    implementation(fileTree("libs/amap"))
 
     // 图片内存优化 fresco
     implementation(libs.fresco)

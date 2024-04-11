@@ -2,14 +2,11 @@ package com.example.learnandroidjava.learn.activity.base.media
 
 import android.media.SoundPool
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.learnandroidjava.R
 import com.example.learnandroidjava.databinding.ActivitySoundPoolBinding
-import com.example.learnandroidjava.learn.shared.adapter.SoundPoolAdapter
+import com.example.learnandroidjava.learn.shared.adapter.recycler_view.SoundPoolAdapter
 import com.example.learnandroidjava.learn.model.bean.Sound
 
 class SoundPoolActivity : AppCompatActivity(), SoundPoolAdapter.OnItemClickListener {

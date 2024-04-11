@@ -6,28 +6,57 @@
         android:name="android.hardware.camera"
         android:required="false" />
 
-    <uses-permission android:name="android.permission.INTERNET" /> <!-- 添加网络套接字（网络）权限 -->
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- 发送通知权限申请 -->
+    <!-- 添加网络套接字（网络）权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- 发送通知权限申请 -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- 允许获取设备和运营商信息，用于问题排查和网络定位（无gps情况下的定位），若需网络定位功能则必选 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!--允许获取精确位置，实时导航为必选-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!--允许获取粗略位置，实时导航为必选-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!--允许获取网络状态，用于网络定位（无gps情况下的定位），若需网络定位功能则必选-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!--允许获取wifi网络信息，用于网络定位（无gps情况下的定位），若需网络定位功能则必选-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!--允许获取wifi状态改变，用于网络定位（无gps情况下的定位），若需网络定位功能则必选-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <!--后台获取位置信息，若需后台定位或持续导航则必选-->
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+    <!--用于申请调用A-GPS模块,卫星定位加速-->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+
     <!-- 允许写入扩展存储，用于写入缓存定位数据 -->
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="32"
-        tools:ignore="ScopedStorage" /> <!-- 允许程序设置内置sd卡的写权限 -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 允许程序访问CellID或WiFi热点来获取粗略的位置 -->
-    <!-- 允许获取精确位置，实时导航为必选 -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 允许获取设备和运营商信息，用于问题排查和网络定位（无gps情况下的定位），若需网络定位功能则必选 -->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 允许获取网络状态，用于网络定位（无gps情况下的定位），若需网络定位功能则必选 -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 允许获取wifi网络信息，用于网络定位（无gps情况下的定位），若需网络定位功能则必选 -->
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 允许获取wifi状态改变，用于网络定位（无gps情况下的定位），若需网络定位功能则必选 -->
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /> <!-- 后台获取位置信息，若需后台定位或持续导航则必选 -->
-    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" /> <!-- 用于申请调用A-GPS模块,卫星定位加速 -->
-    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" /> <!-- 用于用户链接蓝牙时，在导航组件页面的蓝牙连接提醒，建立链接后开发者可选用蓝牙通道进行tts播报 -->
-    <uses-permission android:name="android.permission.BLUETOOTH" /> <!-- 用与导航状态中保持屏幕常亮 -->
-    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- 允许写设备缓存，用于问题排查 -->
+        tools:ignore="ScopedStorage" />
+
+    <!--用于用户链接蓝牙时，在导航组件页面的蓝牙连接提醒，建立链接后开发者可选用蓝牙通道进行tts播报-->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+
+    <!--用与导航状态中保持屏幕常亮-->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!--允许写设备缓存，用于问题排查-->
     <uses-permission
         android:name="android.permission.WRITE_SETTINGS"
-        tools:ignore="ProtectedPermissions" /> <!-- 允许读设备等信息，用于问题排查 -->
+        tools:ignore="ProtectedPermissions" />
+
+    <!--允许读设备等信息，用于问题排查-->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+
     <uses-permission
         android:name="android.permission.WRITE_MEDIA_STORAGE"
         tools:ignore="ProtectedPermissions" />
@@ -60,6 +89,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnAndroidJava"
         tools:targetApi="31">
+        <activity
+            android:name=".learn.activity.lib.AMapSearchActivity"
+            android:exported="false" />
         <activity
             android:name=".project.tab.TabActivity"
             android:exported="false" />
@@ -162,9 +194,14 @@
             android:name="notch.config"
             android:value="portrait|landscape" /> <!-- 沉浸导航栏 适配小米（xiaomi）刘海屏 -->
         <service android:name=".learn.shared.service.CustomService" /> <!-- 注册服务 -->
+
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="04f07a130c4cd17934bfde4c448fa3a3" /> <!-- 静态注册广播接受者 -->
+            android:value="04f07a130c4cd17934bfde4c448fa3a3" />
+        <!-- 导航 service -->
+        <service android:name="com.amap.api.location.APSService" />
+
+        <!-- 静态注册广播接受者 -->
         <receiver
             android:name=".learn.shared.broadcast.receiver.StaticReceiver"
             android:enabled="true"
