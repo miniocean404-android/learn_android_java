@@ -23,8 +23,10 @@ class PersistentCookieJar(context: Context?) : CookieJar {
             cookiesString?.let {
                 val cookieList = mutableListOf<Cookie>()
                 it.split(";").forEach { cookieString ->
-                    Cookie.parse(HttpUrl.get(URL("https://"+host)), cookieString)?.let { cookie ->
-                        cookieList.add(cookie)
+                    HttpUrl.get(URL("https://$host"))?.let { it1 ->
+                        Cookie.parse(it1, cookieString)?.let { cookie ->
+                            cookieList.add(cookie)
+                        }
                     }
                 }
                 cookies[host] = cookieList

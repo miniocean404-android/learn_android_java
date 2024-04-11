@@ -154,6 +154,11 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    //本地依赖库：网络请求
+    implementation(project(path=":http"))
+    //本地依赖库：基础库
+    implementation(project(path=":base"))
+
     // Jetpack Compose 依赖
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

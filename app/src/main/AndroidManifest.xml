@@ -61,6 +61,9 @@
         android:theme="@style/Theme.LearnAndroidJava"
         tools:targetApi="31">
         <activity
+            android:name=".project.tab.TabActivity"
+            android:exported="false" />
+        <activity
             android:name=".learn.activity.base.ui.ShapeActivity"
             android:exported="false" />
         <activity
