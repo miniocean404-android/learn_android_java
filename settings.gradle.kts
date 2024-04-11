@@ -36,3 +36,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "LearnAndroidJava"
 include(":app")
+include(":base")
+include(":http")

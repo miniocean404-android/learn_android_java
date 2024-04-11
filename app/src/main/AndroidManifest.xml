@@ -61,43 +61,43 @@
         android:theme="@style/Theme.LearnAndroidJava"
         tools:targetApi="31">
         <activity
-            android:name=".activity.base.ui.ShapeActivity"
+            android:name=".learn.activity.base.ui.ShapeActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.base.media.SoundPoolActivity"
+            android:name=".learn.activity.base.media.SoundPoolActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.base.media.VideoViewActivity"
+            android:name=".learn.activity.base.media.VideoViewActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.base.media.MediaPlayerActivity"
+            android:name=".learn.activity.base.media.MediaPlayerActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.base.media.RecordActivity"
+            android:name=".learn.activity.base.media.RecordActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.base.media.MediaRecorderActivity"
+            android:name=".learn.activity.base.media.MediaRecorderActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.base.intent.IntentReceiveParamsActivity"
+            android:name=".learn.activity.base.intent.IntentReceiveParamsActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.base.intent.IntentParamsActivity"
+            android:name=".learn.activity.base.intent.IntentParamsActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.base.db.RoomActivity"
+            android:name=".learn.activity.base.db.RoomActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.base.db.SQLiteActivity"
+            android:name=".learn.activity.base.db.SQLiteActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.lib.FrescoActivity"
+            android:name=".learn.activity.lib.FrescoActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.lib.RxJavaActivity"
+            android:name=".learn.activity.lib.RxJavaActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.base.receiver.ReceiverActivity"
+            android:name=".learn.activity.base.receiver.ReceiverActivity"
             android:exported="false"
             android:theme="@style/Theme.LearnAndroidJava" />
         <activity
@@ -112,44 +112,44 @@
             </intent-filter>
         </activity> <!-- 添加活动主入口 -->
         <activity
-            android:name=".activity.base.service.ServiceActivity"
+            android:name=".learn.activity.base.service.ServiceActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.lib.PermissionsActivity"
+            android:name=".learn.activity.lib.PermissionsActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.lib.AMapActivity"
+            android:name=".learn.activity.lib.AMapActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.base.event.ViewBindingActivity"
+            android:name=".learn.activity.base.event.ViewBindingActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.lib.LibGlideActivity"
+            android:name=".learn.activity.lib.LibGlideActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.lib.IjkplayerActivity"
+            android:name=".learn.activity.lib.IjkplayerActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.base.scroll.ViewPage2Activity"
+            android:name=".learn.activity.base.scroll.ViewPage2Activity"
             android:exported="false" />
         <activity
-            android:name=".activity.base.fragment.UseFragmentActivity"
+            android:name=".learn.activity.base.fragment.UseFragmentActivity"
             android:exported="false" />
-        <activity android:name=".activity.base.event.BaseActivity" />
-        <activity android:name=".activity.base.api.NoticeActivity" />
-        <activity android:name=".activity.base.layout.RelativeLayoutActivity" />
-        <activity android:name=".activity.base.layout.FrameLayoutActivity" />
-        <activity android:name=".activity.base.layout.TableLayoutActivity" />
-        <activity android:name=".activity.base.layout.GridLayoutActivity" />
-        <activity android:name=".activity.base.scroll.ListViewActivity" />
-        <activity android:name=".activity.base.layout.ConstraintLayoutActivity" />
-        <activity android:name=".activity.base.scroll.RecyclerViewActivity" />
-        <activity android:name=".activity.base.anim.FrameByFrameActivity" />
-        <activity android:name=".activity.base.anim.TweenActivity" />
-        <activity android:name=".activity.base.anim.PropAnimActivity" />
-        <activity android:name=".activity.base.scroll.ViewPageActivity" />
-        <activity android:name=".activity.lib.OkHttpActivity" />
-        <activity android:name=".activity.base.api.SharePreferencesActivity" />
+        <activity android:name=".learn.activity.base.event.BaseActivity" />
+        <activity android:name=".learn.activity.base.api.NoticeActivity" />
+        <activity android:name=".learn.activity.base.layout.RelativeLayoutActivity" />
+        <activity android:name=".learn.activity.base.layout.FrameLayoutActivity" />
+        <activity android:name=".learn.activity.base.layout.TableLayoutActivity" />
+        <activity android:name=".learn.activity.base.layout.GridLayoutActivity" />
+        <activity android:name=".learn.activity.base.scroll.ListViewActivity" />
+        <activity android:name=".learn.activity.base.layout.ConstraintLayoutActivity" />
+        <activity android:name=".learn.activity.base.scroll.RecyclerViewActivity" />
+        <activity android:name=".learn.activity.base.anim.FrameByFrameActivity" />
+        <activity android:name=".learn.activity.base.anim.TweenActivity" />
+        <activity android:name=".learn.activity.base.anim.PropAnimActivity" />
+        <activity android:name=".learn.activity.base.scroll.ViewPageActivity" />
+        <activity android:name=".learn.activity.lib.OkHttpActivity" />
+        <activity android:name=".learn.activity.base.api.SharePreferencesActivity" />
         <activity android:name=".App" />
 
         <meta-data
@@ -158,12 +158,12 @@
         <meta-data
             android:name="notch.config"
             android:value="portrait|landscape" /> <!-- 沉浸导航栏 适配小米（xiaomi）刘海屏 -->
-        <service android:name=".shared.service.CustomService" /> <!-- 注册服务 -->
+        <service android:name=".learn.shared.service.CustomService" /> <!-- 注册服务 -->
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="04f07a130c4cd17934bfde4c448fa3a3" /> <!-- 静态注册广播接受者 -->
         <receiver
-            android:name=".shared.broadcast.receiver.StaticReceiver"
+            android:name=".learn.shared.broadcast.receiver.StaticReceiver"
             android:enabled="true"
             android:exported="false"
             android:permission="TODO"

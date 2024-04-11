@@ -192,9 +192,9 @@ dependencies {
     // retrofit 封装了 okhttp，并且引入它同时也会引入 okhttp
     // retrofit2.converter Gson 是 retrofit 的 Bean 转换器
     // adapter.rxjava3 解决嵌套请求回调地狱问题
-    implementation(libs.com.squareup.retrofit2.retrofit)
+    implementation(libs.squareup.retrofit2)
     // 还有一种是 com.squareup.retrofit2:converter-moshi:2.11.0
-    implementation(libs.retrofit2.converter.gson)
+    implementation(libs.squareup.retrofit2.converter.gson)
     implementation(libs.converter.moshi)
     implementation(libs.adapter.rxjava3)
 
