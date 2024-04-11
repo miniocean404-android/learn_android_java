@@ -98,7 +98,8 @@ android {
 
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.2"
+        // Compose Compiler 版本
+        kotlinCompilerExtensionVersion = "1.5.11"
     }
 
     packaging {
