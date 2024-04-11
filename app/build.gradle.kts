@@ -9,6 +9,7 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     // 对应 gradle 配置： apply plugin: 'xxx'
     id("com.google.devtools.ksp") version "1.9.21-1.0.15"
+    id("kotlin-kapt")
 }
 
 
@@ -90,6 +91,8 @@ android {
     }
 
     buildFeatures {
+        // mvvm 数据绑定
+        dataBinding = true
         // 启动视图绑定
         viewBinding = true
         // 开启 Jetpack Compose
