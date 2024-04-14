@@ -95,7 +95,7 @@ android {
         dataBinding = true
         // 启动视图绑定
         viewBinding = true
-        // 开启 Jetpack Compose
+        // 开启 Jetpack Compose，哪里开启哪里需要指定 kotlinCompilerExtensionVersion
         compose = true
     }
 
