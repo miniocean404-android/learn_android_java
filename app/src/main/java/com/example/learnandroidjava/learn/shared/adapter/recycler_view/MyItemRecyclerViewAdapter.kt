@@ -36,8 +36,7 @@ class MyItemRecyclerViewAdapter(
 
     override fun getItemCount(): Int = values.size
 
-    inner class ViewHolder(binding: FragmentReplaceBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(binding: FragmentReplaceBinding) : RecyclerView.ViewHolder(binding.root) {
         val idView: TextView = binding.itemNumber
         val contentView: TextView = binding.content
 

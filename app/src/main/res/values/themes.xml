@@ -27,6 +27,10 @@
         <item name="android:windowFullscreen">true</item>
         <!--    导航条透明   -->
         <item name="android:navigationBarColor">@android:color/transparent</item>
+
+        <!-- 设置状态栏为白色的，状态栏文字为黑的 -->
+        <!-- <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>-->
+        <!-- <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>-->
     </style>
 
     <style name="Theme.Tool" parent="android:Theme.Material.Light.NoActionBar" />
